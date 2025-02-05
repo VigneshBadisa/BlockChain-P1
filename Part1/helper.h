@@ -6,151 +6,86 @@
 #include <iostream>
 #include <iomanip>
 #include <variant>
-#include <openssl/sha.h>
+#include <ctime>
+
+typedef long double ld;
 
 struct Txn{
 
 public :
-    int sender_id, receiver_id;
-    float amount, txn_time, txn_fee;
+    static int id;
+    ld timestamp;
+    int payer_id, payee_id, amount;
 
-    Txn() : sender_id(0), receiver_id(0), amount(0), txn_time(0), txn_fee(0) {}
-
-    Txn(float time,int sender, int receiver, float amt){
-        sender_id = sender;
-        receiver_id = receiver;
-        amount = amt;
-        txn_fee = 0;
-        txn_time = time;
-    }
-
-    std::string get_string(){
-        std::ostringstream ss;
-        ss << txn_time << sender_id << receiver_id << amount;
-        return ss.str();    
-    }
-
-    std::string get_hash(){
-        unsigned char hash[SHA256_DIGEST_LENGTH];
-        std::string txn_string = get_string();
-        SHA256(reinterpret_cast<const unsigned char *>(txn_string.c_str()),txn_string.size(),hash);
-        // Convert to human readable string
-        std::stringstream ss;
-        for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
-            ss << std::hex <<std:: setw(2) << std::setfill('0') << (int)hash[i];
-        }
-        return ss.str();
-    }
-    int size(){ 
-    // Size of the transaction assumed to be 1KB
-        return 1000;
-    }
+    Txn(ld timestamp_ ,int payer_id_, int payee_id_, int amount_);
+    ~Txn() = default;
+    std::string get_string();
+    std::string get_hash();
+    int size();
 
 };
 
 struct Block{
 
 public :
-    std::string prev_block_hash, curr_block_hash;   // curr_block_hash works as blk_id
-    float created_time;
-    std::vector<Txn> Txn_list;
+    static int id;
+    std::string parent_hash, hash;   // curr_block_hash works as blk_id
+    ld timestamp;
+    std::vector<Txn*> Txn_list;
 
-    Block() : prev_block_hash(""), curr_block_hash(""), created_time(0) {}
+    // Block() : prev_block_hash(""), curr_block_hash(""), timestamp(0) {}
 
-    std::string get_string(){
-        std::ostringstream ss;
-        ss << prev_block_hash << created_time;
-        for ( auto& txn: Txn_list) {
-            ss << txn.get_string();
-        }
-        return ss.str();
-    }
+    Block(ld timestamp_ ,std::string parent_hash_, std::vector<Txn*>*Txn_list_);
 
-    std::string get_hash(){
-        unsigned char hash[SHA256_DIGEST_LENGTH];
-        std::string block_string = get_string();
-        SHA256(reinterpret_cast<const unsigned char *>(block_string.c_str()),block_string.size(),hash);
-        // Convert to human readable string
-        std::stringstream ss;
-        for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
-            ss << std::hex <<std:: setw(2) << std::setfill('0') << (int)hash[i];
-        }
-        return ss.str();
-    }
+    ~Block() = default;
+    std::string get_string();
+    std::string get_hash();
+    int size();
+
 };
 
 typedef enum {
-    NO_EVENT,
+    EMPTY,
     CREATE_TXN,
-    CREATE_BLK,
     RECV_TXN,
-    RECV_BLK,
-    SEND_TXN,
-    SEND_BLK
+    CREATE_BLK,
+    RECV_BLK
 } EVENT_TYPE;
 
-struct Event {
-    float event_time;
-    EVENT_TYPE type;
-    int event_creator, event_receiver;
-    Txn txn_info;
-    Block blk_info;    
+class Event {
 
-    Event (float ev_time,EVENT_TYPE t, int creat, int recv, Txn T){
-        event_time = ev_time;
-        type = t; event_creator = creat;
-        event_receiver = recv; txn_info = T;
-    }
-    Event (float ev_time,EVENT_TYPE t, int creat, int recv, Block B){
-        event_time = ev_time;
-        type = t; event_creator = creat;
-        event_receiver = recv; blk_info = B;
-    }
+public :
+    ld timestamp;
+    EVENT_TYPE type;
+    int sender_id;
+
+    Event(ld timestamp_, EVENT_TYPE type_,int sender_id_ )
+        : timestamp(timestamp_), type(type_), sender_id(sender_id_) {}
+
+    virtual ~Event() = default;
 };
 
-struct Eventqueue {
+class Event_TXN : public Event {
 
 public:
-    std::vector<Event> q;
-    void push_event(Event E){
-        if(is_empty()){
-            q.push_back(E);
-            return;
-        }
-        for(auto itr=q.begin();itr != q.end();itr++){
-            if(E.event_time < itr->event_time){
-                q.insert(itr,E);
-                return;
-            }
-        }
-        q.push_back(E);
-        return;
-    }
-    void pop_event(){
-        q.erase(q.begin());
-    }
-    Event top_event(){
-        Event E = q[0];
-        return E;
-    }
-    bool is_empty(){
-        return q.empty();
-    }
+    int receiver_id;
+    Txn* txn;
+    Event_TXN(ld timestamp_, EVENT_TYPE type_ ,int sender_id_, int receiver_id_, Txn* txn_)
+        :Event(timestamp_,type_,sender_id_),receiver_id(receiver_id_) ,txn(txn_) {}
+};
+
+class Event_BLK : public Event {
+
+public:
+    int receiver_id;
+    Block* blk;
+    Event_BLK(ld timestamp_, EVENT_TYPE type_,int sender_id_, int receiver_id_ , Block* blk_)
+        :Event(timestamp_,type_,sender_id_),receiver_id(receiver_id_), blk(blk_) {}
+
 };
 
 
-std::ostream& operator <<(std::ostream& out, const Txn& T) {
-    out << "Time:[" << T.txn_time << "] Txn:[" << T.sender_id << "] Pays [" << T.receiver_id <<"] Amount: " << T.amount << std::endl;
-    return out;
-}
-
-std::ostream& operator <<(std::ostream& out, const Block& B) {
-    out << "Created Time:[" << B.created_time 
-        << "] Block hash:[" <<B.curr_block_hash << "]" <<std::endl;
-    for(const Txn &T: B.Txn_list){
-        out << T;
-    }
-    return out;
-}
+std::ostream& operator<<(std::ostream& os, const Txn& txn);
+std::ostream& operator<<(std::ostream& os, const Block& block);
 
 #endif

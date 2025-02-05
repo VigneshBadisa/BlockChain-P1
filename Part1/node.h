@@ -1,60 +1,51 @@
 #ifndef NODE_H
 #define NODE_H
 
+#include "helper.h"
+
 #include <random>
+#include <unordered_map>
+#include <utility>
+
+struct simulator;
 
 class Node {
-    int id;
-    bool is_slow;               // 1 - Slow , 0 - Fast
-    bool is_low_cpu;            // 1 - Low CPU , 0 - High CPU
 
+public:
+
+    int id;
+    bool is_slow;                // 1 - Slow , 0 - Fast
+    ld Ttx;                      // Mean Interval time for creating transactions
+    
+    int numMinedblks = 0;                       // No of blks mined by the Node/peer
+    ld hash_power;                              // Hash Power of the Node
 
     simulator* simul;
 
-    
-    // Info maintained by each peer
+    std::unordered_map<int,std::pair<int,int>> latency;          // Latency info 
 
-    struct LATENCY_INFO{
-        float pij,cij,dij_mean;
-        LATENCY_INFO(float p, float c, float d){
-            pij = p; cij = c; dij_mean = d;
-        }
-        float get_msg_latency(int msg_length){
-            int seed = 123;
-            default_random_engine generator (seed);
-            exponential_distribution<float> distr(dij_mean);
-            float dij = distr(generator);
-            return pij + float(msg_length/cij) + dij;
-        }
-    };
+    Block* genesis_blk;             
+    Block* tail_blk;                            // Tail blk of the longest chain at any point of time
+    Block* mining_blk;                          // Block being mined by the Node/Peer       
 
-    unordered_map<int,LATENCY_INFO> adj_latency;
+    std::vector<int> expired_txns;                   // Txns that are added to the blockchain
+    std::vector<int> txn_pool;                       // Transactions waiting to be added to the block chain
+    std::vector<int> blockchain;                     //  Blocks of longest chain
+    std::vector<int> orphan_blks;                    //  blocks invalidated from the longest chain or blocks of a stale branch 
 
-    unordered_map<string, Txn> txn_ALL;
-    vector<Txn> txn_pool;
+    std::unordered_map<int, Txn*> Alltxns;           
+    std::unordered_map<int, Block*> AllBlks;  
+    std::unordered_map<int,int> wallet;              // Balance amount of the peers over the blockchain
 
-    int n_blks_generated = 0;
-    float avg_time_btw_txns;
+    std::exponential_distribution<ld> generate_Ttx, generate_tk;
+    std::uniform_int_distribution<int> select_peer;
 
-    Block genesis_blk;
-    unordered_map<string, Block> blk_ALL;
-    unordered_map<string,pair<int,Block>> blks_unvalidated;
 
-    unordered_map<string,unordered_map<int,int>> balance_ALL;
-
-    Node(int node_id, bool speed, bool cpu, simulator* sim){
-        id = node_id;
-        speed = is_slow;
-        cpu = is_low_cpu;
-        simul = sim;
-        avg_time_btw_txns = simul->T_tx;
-        genesis_blk = simul->GENESIS_blk;
-        blk_ALL[genesis_blk.curr_block_hash] = genesis_blk;
-    }
+    Node(int id_, bool is_slow_ , ld Ttx_, ld hash_power_ , simulator* simul_, Block* genesis_blk_);
     ~Node();
 
-    void add_new_latency(int node_id, float pij, float cij, float dij_mean);
-    void update_balance();
+    void get_balance();
+    void update_wallet();
     bool is_txn_valid();
     void create_txn();
     void send_txn();
