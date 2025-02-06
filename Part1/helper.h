@@ -13,11 +13,11 @@ typedef long double ld;
 struct Txn{
 
 public :
-    static int id;
+    int id;
     ld timestamp;
     int payer_id, payee_id, amount;
 
-    Txn(ld timestamp_ ,int payer_id_, int payee_id_, int amount_);
+    Txn(int id_,ld timestamp_ ,int payer_id_, int payee_id_, int amount_);
     ~Txn() = default;
     std::string get_string();
     std::string get_hash();
@@ -28,14 +28,14 @@ public :
 struct Block{
 
 public :
-    static int id;
+    int id;
     std::string parent_hash, hash;   // curr_block_hash works as blk_id
     ld timestamp;
     std::vector<Txn*> Txn_list;
 
     // Block() : prev_block_hash(""), curr_block_hash(""), timestamp(0) {}
 
-    Block(ld timestamp_ ,std::string parent_hash_, std::vector<Txn*>*Txn_list_);
+    Block(int id_,ld timestamp_ ,std::string parent_hash_, std::vector<Txn*>*Txn_list_);
 
     ~Block() = default;
     std::string get_string();
@@ -52,6 +52,7 @@ typedef enum {
     RECV_BLK
 } EVENT_TYPE;
 
+
 class Event {
 
 public :
@@ -63,6 +64,10 @@ public :
         : timestamp(timestamp_), type(type_), sender_id(sender_id_) {}
 
     virtual ~Event() = default;
+};
+
+struct EventComparator {
+    bool operator()(const Event* a, const Event* b);
 };
 
 class Event_TXN : public Event {

@@ -6,7 +6,8 @@
 
 using namespace std;
 
-Txn::Txn(ld timestamp_ ,int payer_id_, int payee_id_, int amount_){
+Txn::Txn(int id_,ld timestamp_ ,int payer_id_, int payee_id_, int amount_){
+    id = id_;
     payer_id = payer_id_;
     payee_id = payee_id_;
     amount = amount_;
@@ -36,11 +37,14 @@ int Txn::size(){
     return 1000;
 }
 
-Block::Block(ld timestamp_ ,::string parent_hash_, ::vector<Txn*>*Txn_list_){
+Block::Block(int id_,ld timestamp_ ,::string parent_hash_, ::vector<Txn*>*Txn_list_){
+    id= id_;
     timestamp = timestamp_;
     parent_hash = parent_hash_;
-    for(auto &txn: *Txn_list_ ){
-        Txn_list.push_back(txn);
+    if(Txn_list_ != NULL){
+        for(auto &txn: *Txn_list_ ){
+            Txn_list.push_back(txn);
+        }
     }
     hash = get_hash();
 }
@@ -48,8 +52,10 @@ Block::Block(ld timestamp_ ,::string parent_hash_, ::vector<Txn*>*Txn_list_){
 string Block:: get_string(){
     ostringstream ss;
     ss << parent_hash << timestamp;
-    for ( auto& txn: Txn_list) {
-        ss << txn->get_string();
+    if(!Txn_list.empty()){
+        for ( auto& txn: Txn_list) {
+            ss << txn->get_string();
+        }
     }
     return ss.str();
 }
@@ -74,14 +80,23 @@ int Block::size(){
     return size;
 }
 
+bool EventComparator:: operator()(const Event* a, const Event* b){
+    if(a->timestamp != b->timestamp) {
+        return a->timestamp < b->timestamp;
+    }
+    else{
+        return &a < &b;
+    }
+}
+
 ostream& operator <<(ostream& out, const Txn& T) {
-    out << "Time:[" << T.timestamp << "] Txn:[" << T.payer_id << "] Pays [" << T.payee_id <<"] Amount: " << T.amount << endl;
+    out << "Time:[" << T.timestamp << "] Txn ID:[" << T.id << "] [" << T.payer_id << "] Pays [" << T.payee_id <<"] Amount: " << T.amount << endl;
     return out;
 }
 
 ostream& operator <<(ostream& out, const Block& B) {
-    out << "Created Time:[" << B.timestamp
-        << "] Block hash:[" << B.hash << "]" << endl;
+    out << "Time:[" << B.timestamp
+        << "] Block ID:[" << B.id << "]" << endl;
     for(auto &txn: B.Txn_list){
         out << *txn;
     }

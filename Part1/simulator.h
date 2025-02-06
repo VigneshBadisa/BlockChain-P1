@@ -5,6 +5,8 @@
 
 #include <unordered_set>
 #include <unordered_map>
+#include <set>
+
 
 class Node;
 
@@ -15,11 +17,12 @@ public :
     int numNodes;
     float z0,z1;                                        // percentage of slow nodes, low hash nodes
     ld T_tx, Tk;                                        // T_tx, Tk
+    ld simclock = 0;
 
 
     std::unordered_map<int,Node*> nodes;
-    std::unordered_map<int,std::vector<int>> adj_nodes;
-
+    std::unordered_map<int,std::unordered_set<int>> adj_nodes;
+    std::set<Event*,EventComparator> event_queue;
 
     Block* GENESIS_blk;
 
@@ -28,12 +31,13 @@ public :
 
     void start();
     void create_network();
-    void create_genesis_blk();
     void add_event();
     void execute_top_event();
-    void write_tree_file();
+    void write_tree_file();         // TBD
 
-    ~simulator();
+    // Visualization                // TBD
+
+    ~simulator() = default;
 };
 
 #endif

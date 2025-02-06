@@ -22,7 +22,7 @@ public:
 
     simulator* simul;
 
-    std::unordered_map<int,std::pair<int,int>> latency;          // Latency info 
+    std::unordered_map<int,std::pair<ld,ld>> latency;          // Latency info 
 
     Block* genesis_blk;             
     Block* tail_blk;                            // Tail blk of the longest chain at any point of time
@@ -44,15 +44,15 @@ public:
     Node(int id_, bool is_slow_ , ld Ttx_, ld hash_power_ , simulator* simul_, Block* genesis_blk_);
     ~Node();
 
-    void get_balance();
-    void update_wallet();
-    bool is_txn_valid();
+    void get_balance();             // TBD
+    void update_wallet();           
+    bool is_txn_valid();            // TBD
     void create_txn();
-    void send_txn();
-    void recv_txn();
-    void is_blk_valid();
+    void send_txn();                // TBD
+    void recv_txn();                
+    void is_blk_valid();            // TBD
     void create_blk();
-    void send_blk();
+    void send_blk();                // TBD
     void recv_blk();
 
 };
