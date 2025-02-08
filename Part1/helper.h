@@ -7,22 +7,31 @@
 #include <iomanip>
 #include <variant>
 #include <ctime>
+#include <random>
 
+extern std::mt19937_64 rng;
 typedef long double ld;
+
+struct simulator;
 
 struct Txn{
 
 public :
+    static int counter;
     int id;
     ld timestamp;
     int payer_id, payee_id, amount;
 
-    Txn(int id_,ld timestamp_ ,int payer_id_, int payee_id_, int amount_);
+    Txn(ld timestamp_ ,int payer_id_, int payee_id_, int amount_);
     ~Txn() = default;
     std::string get_string();
     std::string get_hash();
     int size();
 
+};
+
+struct Txncomparator{
+    bool operator()(const Txn* a,const Txn*  b) const;
 };
 
 struct Block{
@@ -62,12 +71,14 @@ public :
 
     Event(ld timestamp_, EVENT_TYPE type_,int sender_id_ )
         : timestamp(timestamp_), type(type_), sender_id(sender_id_) {}
-
+    
+    bool is_create_event();
+    
     virtual ~Event() = default;
 };
 
 struct EventComparator {
-    bool operator()(const Event* a, const Event* b);
+    bool operator()(const Event* a, const Event* b) const;
 };
 
 class Event_TXN : public Event {
@@ -86,11 +97,25 @@ public:
     Block* blk;
     Event_BLK(ld timestamp_, EVENT_TYPE type_,int sender_id_, int receiver_id_ , Block* blk_)
         :Event(timestamp_,type_,sender_id_),receiver_id(receiver_id_), blk(blk_) {}
-
 };
 
+class Link{
+public:
+    int peer_id;
+    ld pij, cij;
+    std::exponential_distribution<ld> generate_dij;
+
+    Link(int peer_id_,ld pj_, ld cij_);
+    ld get_delay(int msg_length);
+};
+
+const char* eventTypeToString(EVENT_TYPE type);
 
 std::ostream& operator<<(std::ostream& os, const Txn& txn);
 std::ostream& operator<<(std::ostream& os, const Block& block);
+std::ostream& operator<<(std::ostream& os, const Link& L);
+std::ostream& operator<<(std::ostream& os, const Event& event);
+std::ostream& operator<<(std::ostream& os, const Event_TXN& event);
+std::ostream& operator<<(std::ostream& os, const Event_BLK& event) ;
 
 #endif
