@@ -17,12 +17,8 @@ struct simulator;
 struct Txn{
 
 public :
-<<<<<<< HEAD
-    const int id;
-=======
     static int counter;
     int id;
->>>>>>> c9b7360ff85208a46e87c17d1fab4761de799e3f
     ld timestamp;
     int payer_id, payee_id, amount;
 

@@ -32,4 +32,4 @@ simulator.o: simulator.cc simulator.h
 
 # Clean up object files and executable
 clean:
-	del $(OBJS) $(TARGET).exe
+	rm  $(OBJS) $(TARGET).exe
