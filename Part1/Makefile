@@ -22,7 +22,7 @@ $(TARGET): $(OBJS)
 
 # Compiling the .cpp files into .o (object files)
 helper.o: helper.cc helper.h
-	$(CXX) $(CXXFLAGS) -c helper.cc 
+	$(CXX) $(CXXFLAGS) -c helper.cc $(LDFLAGS)
 
 node.o: node.cc node.h
 	$(CXX) $(CXXFLAGS) -c node.cc

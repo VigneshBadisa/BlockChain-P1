@@ -13,7 +13,7 @@ typedef long double ld;
 struct Txn{
 
 public :
-    int id;
+    const int id;
     ld timestamp;
     int payer_id, payee_id, amount;
 

@@ -13,7 +13,6 @@ Node:: Node(int id_, bool is_slow_ , ld Ttx_, ld hash_power_ , simulator* simul_
 }
 
 void Node:: create_txn(){
-
 }
 void Node:: send_txn(){
 
@@ -25,6 +24,8 @@ bool Node:: is_txn_valid(){
     return false;
 }
 void Node:: create_blk(){
+ // creates a new block
+ 
 
 }
 void Node:: send_blk(){
