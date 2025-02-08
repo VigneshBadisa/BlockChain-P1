@@ -7,6 +7,8 @@
 #include <unordered_map>
 #include <set>
 
+#define MAX_BLK_SIZE 1000
+#define CAPITAL 20
 
 class Node;
 

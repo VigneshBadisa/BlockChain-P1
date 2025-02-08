@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <variant>
 #include <ctime>
+#include <unordered_set>
 #include <random>
 
 extern std::mt19937_64 rng;
@@ -37,14 +38,15 @@ struct Txncomparator{
 struct Block{
 
 public :
-    int id;
-    std::string parent_hash, hash;   // curr_block_hash works as blk_id
+    static int counter;
     ld timestamp;
+    int id, parent_id;
+    std::string hash;   // curr_block_hash works as blk_id
     std::vector<Txn*> Txn_list;
 
     // Block() : prev_block_hash(""), curr_block_hash(""), timestamp(0) {}
 
-    Block(int id_,ld timestamp_ ,std::string parent_hash_, std::vector<Txn*>*Txn_list_);
+    Block(ld timestamp_ ,int parent_id_,std::vector<Txn*>*Txn_list_);
 
     ~Block() = default;
     std::string get_string();
@@ -53,8 +55,24 @@ public :
 
 };
 
+struct chain{
+
+public:
+    Block* tail;
+    int depth;
+    std::vector<int> wallet;
+    std::unordered_set<int> added_txns;
+    chain(Block* tail_,int depth_,int n,int amount):
+        tail(tail_),depth(depth_),wallet(std::vector<int>(n,amount)) {}
+    void update_tail(Block* B);
+};
+
+struct chaincomparator{
+    bool operator()(const chain* a, const chain* b) const ;
+};
+
 typedef enum {
-    EMPTY,
+    MINING_START,
     CREATE_TXN,
     RECV_TXN,
     CREATE_BLK,

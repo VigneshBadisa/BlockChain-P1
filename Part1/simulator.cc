@@ -8,6 +8,7 @@ using namespace std;
 
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 int Txn::counter = 0;
+int Block::counter = 0;
 
 void simulator::start(){
 
@@ -28,13 +29,16 @@ void simulator::start(){
         lowhashNodes[node_id] = true;
     }
 
-    GENESIS_blk = new Block(0, simclock, "", NULL);
+    GENESIS_blk = new Block(simclock,-1, NULL);
 
     for(int i=0;i<numNodes;i++){
         ld hash_power = low_hash_power;
         if(!lowhashNodes[i]) hash_power = 10*low_hash_power;
-        Node* new_node = new Node(i,slowNodes[i],T_tx,hash_power,GENESIS_blk);
+        Node* new_node = new Node(i,slowNodes[i],T_tx,Tk,hash_power,GENESIS_blk);
         nodes[i] = new_node;
+        chain* c = new chain(GENESIS_blk,0,numNodes,CAPITAL);
+        nodes[i]->tail_blks.insert(c);
+        nodes[i]->AllBlks[0] = GENESIS_blk;
     }
     // create network topology and populate latency info  
     create_network();
@@ -55,8 +59,9 @@ void simulator::start(){
 
     for(int i=0;i<numNodes;i++){
         Event* E = new Event(0,CREATE_TXN,i);
-        // nodes[i]->mine_new_blk();
         add_event(E);
+        Event* E2 = new Event(5,MINING_START,i);
+        add_event(E2);
     }
 
     while(!event_queue.empty()){
@@ -70,11 +75,18 @@ void simulator::start(){
 
     while(!event_queue.empty()){
         top_event = *event_queue.begin();
+        simclock = top_event->timestamp;
         execute_event(top_event,true);
         delete_event(top_event);
     }
 
     cout<< "End of Simulation" <<endl;
+
+    for(int i=0;i<numNodes;i++){
+        cout<<" Node :"<< i << endl;
+        nodes[i]->printBlockTree();
+        cout <<endl;
+    }
 }
 
 // Create a connected graph as per instrcutions in Point 4 and 
@@ -126,6 +138,7 @@ void simulator::create_network(){
 }
 void simulator::add_event(Event * E){
     E->timestamp += simclock;
+    // if(E->type == CREATE_BLK || E->type == RECV_BLK )cout<< *E <<endl;
     event_queue.insert(E);
 }
 
@@ -138,22 +151,44 @@ void simulator::delete_event(Event* E) {
 }
 
 void simulator::execute_event(Event* E,bool stop_create_events){        // execute all sametime events
+
     if(E->type == CREATE_TXN){
-        cout << *E <<endl;
+        // cout << *E <<endl;
         nodes[E->sender_id]->create_txn(this,stop_create_events);
     }else if (E->type == RECV_TXN){
         Event_TXN* txn_event = dynamic_cast<Event_TXN*>(E);
-        bool is_executed = nodes[txn_event->receiver_id]->recv_txn(E->sender_id,txn_event->txn,this);
-        if(is_executed) cout << *txn_event <<endl;
-        else cout<<"Not executed"<<endl;
+        bool is_executed = nodes[txn_event->receiver_id]->recv_txn(txn_event->sender_id,txn_event->txn,this);
+        // if(is_executed) cout << *txn_event <<endl;
+        // else cout<<"Txn discarded"<<endl;
+    }else if (E->type == RECV_BLK){
+        // cout << "New Event " <<endl;
+        Event_BLK* blk_event = dynamic_cast<Event_BLK*>(E);
+        // cout << *blk_event <<endl;
+        bool is_executed = nodes[blk_event->receiver_id]->recv_blk(blk_event->sender_id,blk_event->blk,this,stop_create_events);
+        // if(!is_executed) cout<<" Block discarded "<<endl;
+        // cout << "Block chain of "<<blk_event->receiver_id << endl;
+        // nodes[blk_event->receiver_id]->printBlockTree();
+    }else if (E->type == CREATE_BLK){
+        // cout << "New Event " <<endl;
+        Event_BLK* blk_event = dynamic_cast<Event_BLK*>(E);
+        // cout << *blk_event <<endl;
+        nodes[blk_event->receiver_id]->mining_success(blk_event->blk,this,stop_create_events);
+        // cout << "Block chain of "<<blk_event->receiver_id << endl;
+        // nodes[blk_event->receiver_id]->printBlockTree();
+    }else if (E->type == MINING_START){
+        // cout << "New Event " <<endl;
+        // cout<<*E<<endl;
+        // cout<< "Node : [" << E->sender_id << "] Created Events "<<endl;
+        nodes[E->sender_id]->mine_new_blk(this);
     }
+
 }
 void simulator::write_tree_file(){
     
 }
 
 int main(){
-    simulator sim(10,10,30,5,3.0023124,324.34);
+    simulator sim(20,20,30,500,10,1000);
     sim.start();
     return 0;
 }

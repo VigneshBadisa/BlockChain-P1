@@ -38,10 +38,10 @@ int Txn::size(){
     return 1000;
 }
 
-Block::Block(int id_,ld timestamp_ ,::string parent_hash_, ::vector<Txn*>*Txn_list_){
-    id= id_;
+Block::Block(ld timestamp_ , int parent_id_,vector<Txn*>*Txn_list_){
+    id = counter++;
     timestamp = timestamp_;
-    parent_hash = parent_hash_;
+    parent_id = parent_id_;
     if(Txn_list_ != NULL){
         for(auto &txn: *Txn_list_ ){
             Txn_list.push_back(txn);
@@ -52,7 +52,7 @@ Block::Block(int id_,ld timestamp_ ,::string parent_hash_, ::vector<Txn*>*Txn_li
 
 string Block:: get_string(){
     ostringstream ss;
-    ss << parent_hash << timestamp;
+    ss << parent_id << timestamp;
     if(!Txn_list.empty()){
         for ( auto& txn: Txn_list) {
             ss << txn->get_string();
@@ -86,7 +86,32 @@ bool Txncomparator:: operator()(const Txn* a, const Txn* b) const{
         return a->timestamp < b->timestamp;
     }
     else{
-        return a < b;
+        return a->id < b->id;
+    }
+}
+
+// updates the wallet and all transactions included in the chain
+
+void chain::update_tail(Block* B){
+    tail = B;
+    depth += 1;
+    for(Txn* T:B->Txn_list){
+        if(T->payer_id == T->payee_id){
+            wallet[T->payer_id] += T->amount;
+        }
+        else{
+            added_txns.insert(T->id);
+            wallet[T->payer_id] -= T->amount;
+            wallet[T->payee_id] += T->amount;
+        }
+    }
+}
+
+bool chaincomparator::operator()(const chain* a, const chain* b) const{
+    if(a->depth != b->depth){
+        return a->depth > b->depth;
+    }else{
+        return a->tail->id < b->tail->id;
     }
 }
 
@@ -116,17 +141,17 @@ ld Link :: get_delay(int msg_length){
 }
 
 ostream& operator <<(ostream& out, const Txn& T) {
-    out << "Time:[" << T.timestamp << "] Txn ID:[" << T.id;
-    // out << "] [" << T.payer_id << "] Pays [" << T.payee_id <<"] Amount: " << T.amount << endl;
+    out << "Time:[" << T.timestamp << "] Txn ID:[" << T.id <<"]";
+    out << " [" << T.payer_id << "] Pays [" << T.payee_id <<"] Amount: " << T.amount << endl;
     return out;
 }
 
 ostream& operator <<(ostream& out, const Block& B) {
-    out << "Time:[" << B.timestamp
-        << "] Block ID:[" << B.id << "]" << endl;
-    for(auto &txn: B.Txn_list){
-        out << *txn;
-    }
+    out << " Block ID:[" << B.id << "] Parent ID: ["<< B.parent_id << "]";
+    // for(auto &txn: B.Txn_list){
+    //     out << txn->id << " ";
+    // }
+    // out << "]";
     return out;
 }
 
@@ -138,7 +163,7 @@ ostream& operator <<(ostream& out, const Link& L){
 
 const char* eventTypeToString(EVENT_TYPE type) {
     switch (type) {
-        case EMPTY: return "EMPTY";
+        case MINING_START: return "MINING_START";
         case CREATE_TXN: return "CREATE_TXN";
         case RECV_TXN: return "RECV_TXN";
         case CREATE_BLK: return "CREATE_BLK";
@@ -148,16 +173,19 @@ const char* eventTypeToString(EVENT_TYPE type) {
 }
 
 ostream& operator<<(ostream& os, const Event& event) {
-    os << "Time:[" << event.timestamp << "] Event Type:[" << eventTypeToString(event.type) << "] Sender ID:[" << event.sender_id << "]";
+    // os << "Time:[" << event.timestamp << "] ";
+    os << "Event Type:[" << eventTypeToString(event.type) << "] Sender ID:[" << event.sender_id << "]";
     return os;
 }
 
 ostream& operator<<(ostream& os, const Event_TXN& event) {
-    os << "Time:[" << event.timestamp << "] Event Type:[" << eventTypeToString(event.type) << "] Sender ID:[" << event.sender_id << "] Receiver ID:[" << event.receiver_id << "] Txn: " << *event.txn;
+    // os << "Time:[" << event.timestamp << "] ";
+    os << "Event Type:[" << eventTypeToString(event.type) << "] Sender ID:[" << event.sender_id << "] Receiver ID:[" << event.receiver_id << "] Txn: " << *event.txn;
     return os;
 }
 
 ostream& operator<<(ostream& os, const Event_BLK& event) {
-    os << "Time:[" << event.timestamp << "] Event Type:[" << eventTypeToString(event.type) << "] Sender ID:[" << event.sender_id << "] Receiver ID:[" << event.receiver_id << "] Block: " << *event.blk;
+    // os << "Time:[" << event.timestamp << "] ";
+    os << "Event Type:[" << eventTypeToString(event.type) << "] Sender ID:[" << event.sender_id << "] Receiver ID:[" << event.receiver_id << "] Block: " << *event.blk;
     return os;
 }
