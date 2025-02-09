@@ -40,6 +40,7 @@ struct Block{
 public :
     static int counter;
     ld timestamp;
+    ld recvdtime;
     int id, parent_id;
     std::string hash;   // curr_block_hash works as blk_id
     std::vector<Txn*> Txn_list;
@@ -63,8 +64,9 @@ public:
     std::vector<int> wallet;
     std::unordered_set<int> added_txns;
     chain(Block* tail_,int depth_,int n,int amount):
-        tail(tail_),depth(depth_),wallet(std::vector<int>(n,amount)) {}
+        tail(tail_),depth(depth_),wallet(n,amount) {}
     void update_tail(Block* B);
+    // ~chain() = default;
 };
 
 struct chaincomparator{
@@ -125,6 +127,11 @@ public:
 
     Link(int peer_id_,ld pj_, ld cij_);
     ld get_delay(int msg_length);
+};
+
+struct stats{
+public:
+
 };
 
 const char* eventTypeToString(EVENT_TYPE type);

@@ -22,6 +22,7 @@ public :
     ld simclock = 0;
     ld simEndtime;
 
+    int total_mined_blks = 0;
 
     std::unordered_map<int,Node*> nodes;
     std::unordered_map<int,std::unordered_set<int>> adj_nodes;

@@ -147,11 +147,11 @@ ostream& operator <<(ostream& out, const Txn& T) {
 }
 
 ostream& operator <<(ostream& out, const Block& B) {
-    out << " Block ID:[" << B.id << "] Parent ID: ["<< B.parent_id << "]";
+    out << "Time:[" << B.timestamp << "] " << "Block ID: [" << B.id << "] Parent ID: ["<< B.parent_id << "]";
     // for(auto &txn: B.Txn_list){
     //     out << txn->id << " ";
     // }
-    // out << "]";
+    out << " No of Txns [" << B.Txn_list.size() <<"]";
     return out;
 }
 

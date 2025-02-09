@@ -3,6 +3,8 @@
 #include <queue>
 #include <chrono>
 #include <cassert>
+#include <fstream>
+#include <filesystem>
 
 using namespace std;
 
@@ -12,6 +14,8 @@ int Block::counter = 0;
 
 void simulator::start(){
 
+    cout << "****Starting Simulation****"<<endl;
+    cout << nodes.size() <<endl;
     // Deciding Slow Nodes
     int numSlowNodes = (z0/100.0)*numNodes;
     vector<bool> slowNodes(numNodes,false);
@@ -30,18 +34,21 @@ void simulator::start(){
     }
 
     GENESIS_blk = new Block(simclock,-1, NULL);
+    GENESIS_blk->recvdtime = 0;
 
     for(int i=0;i<numNodes;i++){
         ld hash_power = low_hash_power;
         if(!lowhashNodes[i]) hash_power = 10*low_hash_power;
-        Node* new_node = new Node(i,slowNodes[i],T_tx,Tk,hash_power,GENESIS_blk);
+        Node* new_node = new Node(i,slowNodes[i],!lowhashNodes[i],T_tx,Tk,hash_power,GENESIS_blk);
         nodes[i] = new_node;
         chain* c = new chain(GENESIS_blk,0,numNodes,CAPITAL);
         nodes[i]->tail_blks.insert(c);
         nodes[i]->AllBlks[0] = GENESIS_blk;
     }
     // create network topology and populate latency info  
+    cout << "[CHECKPOINT] : Creating Network"<<endl;
     create_network();
+    cout << "[CHECKPOINT] : Netwok Created Successfully"<<endl;
 
     uniform_real_distribution<ld> light_delay_db(0.010,0.500);      // in seconds
 
@@ -57,12 +64,16 @@ void simulator::start(){
     }
     // Initializing the events
 
+    cout << "[CHECKPOINT] : Initializing Events - Mining Starts after 5 sec" <<endl;
+
     for(int i=0;i<numNodes;i++){
         Event* E = new Event(0,CREATE_TXN,i);
         add_event(E);
         Event* E2 = new Event(5,MINING_START,i);
         add_event(E2);
     }
+
+    cout << "[CHECKPOINT] : Executing Events in queue " <<endl;
 
     while(!event_queue.empty()){
         top_event = *event_queue.begin();
@@ -71,7 +82,10 @@ void simulator::start(){
         execute_event(top_event,false);            
         delete_event(top_event);
     }
-    cout << "Remaining Events in the queue" <<endl;
+
+    cout << "[CHECKPOINT] : All Events before simEndtime executed Succesfully" <<endl;
+
+    cout << "[CHECKPOINT] : Stopping Creating Events"<<endl;
 
     while(!event_queue.empty()){
         top_event = *event_queue.begin();
@@ -79,14 +93,11 @@ void simulator::start(){
         execute_event(top_event,true);
         delete_event(top_event);
     }
+    
+    cout << "[CHECKPOINT] : Remaining Events in queue executed Succesfully" <<endl;
 
-    cout<< "End of Simulation" <<endl;
+    cout<< "[CHECKPOINT] : End of Simulation" <<endl;
 
-    for(int i=0;i<numNodes;i++){
-        cout<<" Node :"<< i << endl;
-        nodes[i]->printBlockTree();
-        cout <<endl;
-    }
 }
 
 // Create a connected graph as per instrcutions in Point 4 and 
@@ -127,14 +138,14 @@ void simulator::create_network(){
     }
     // log - Network topology
 
-    cout<<"Network printing"<<endl;
-    for (int i = 0; i < numNodes; ++i) {
-        cout << "Peer " << i << " connected to: ";
-        for (int neighbor : adj_nodes[i]) {
-            cout << neighbor << " ";
-        }
-        cout << endl;
-    }
+    // cout<<"Network printing"<<endl;
+    // for (int i = 0; i < numNodes; ++i) {
+    //     cout << "Peer " << i << " connected to: ";
+    //     for (int neighbor : adj_nodes[i]) {
+    //         cout << neighbor << " ";
+    //     }
+    //     cout << endl;
+    // }
 }
 void simulator::add_event(Event * E){
     E->timestamp += simclock;
@@ -157,14 +168,14 @@ void simulator::execute_event(Event* E,bool stop_create_events){        // execu
         nodes[E->sender_id]->create_txn(this,stop_create_events);
     }else if (E->type == RECV_TXN){
         Event_TXN* txn_event = dynamic_cast<Event_TXN*>(E);
-        bool is_executed = nodes[txn_event->receiver_id]->recv_txn(txn_event->sender_id,txn_event->txn,this);
+        nodes[txn_event->receiver_id]->recv_txn(txn_event->sender_id,txn_event->txn,this);
         // if(is_executed) cout << *txn_event <<endl;
         // else cout<<"Txn discarded"<<endl;
     }else if (E->type == RECV_BLK){
         // cout << "New Event " <<endl;
         Event_BLK* blk_event = dynamic_cast<Event_BLK*>(E);
         // cout << *blk_event <<endl;
-        bool is_executed = nodes[blk_event->receiver_id]->recv_blk(blk_event->sender_id,blk_event->blk,this,stop_create_events);
+        nodes[blk_event->receiver_id]->recv_blk(blk_event->sender_id,blk_event->blk,this,stop_create_events);
         // if(!is_executed) cout<<" Block discarded "<<endl;
         // cout << "Block chain of "<<blk_event->receiver_id << endl;
         // nodes[blk_event->receiver_id]->printBlockTree();
@@ -184,11 +195,30 @@ void simulator::execute_event(Event* E,bool stop_create_events){        // execu
 
 }
 void simulator::write_tree_file(){
-    
-}
 
-int main(){
-    simulator sim(20,20,30,500,10,1000);
-    sim.start();
-    return 0;
+    string logDir = "logs";  // Directory name
+
+    // Check if "logs" directory exists; if not, create it
+    if (!filesystem::exists(logDir)) {
+        if (filesystem::create_directory(logDir)) {
+            cout << "Directory 'logs' created successfully.\n";
+        } else {
+            cerr << "Failed to create 'logs' directory.\n";
+            return;
+        }
+    }
+
+    for(int i=0;i<numNodes;i++) total_mined_blks += nodes[i]->numMinedblks;
+
+
+    for (const auto& [id, node] : nodes) {
+        ofstream file("logs/node_" + to_string(id) + ".log");
+        if (!file) {
+            cerr << "Error: Could not open file for Node " << id << endl;
+            continue;
+        }
+        node->print_stats(this,file);
+        file.close();
+    }
+
 }

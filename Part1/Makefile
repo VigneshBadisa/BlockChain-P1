@@ -8,10 +8,10 @@ CXXFLAGS = -std=c++17 -Wall
 LDFLAGS = -lssl -lcrypto
 
 # Object files
-OBJS = helper.o node.o simulator.o
+OBJS = helper.o node.o simulator.o main.o
 
 # Output executable
-TARGET = my_program
+TARGET = sim
 
 # Default target
 all: $(TARGET)
@@ -22,14 +22,17 @@ $(TARGET): $(OBJS)
 
 # Compiling the .cpp files into .o (object files)
 helper.o: helper.cc helper.h
-	$(CXX) $(CXXFLAGS) -c helper.cc $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -c helper.cc
 
 node.o: node.cc node.h
 	$(CXX) $(CXXFLAGS) -c node.cc
 
-simulator.o: simulator.cc simulator.h
+simulator.o: simulator.cc simulator.h 
 	$(CXX) $(CXXFLAGS) -c simulator.cc
+
+main.o: main.cc
+	$(CXX) $(CXXFLAGS) -c main.cc
 
 # Clean up object files and executable
 clean:
-	rm  $(OBJS) $(TARGET).exe
+	del  $(OBJS) $(TARGET).exe "logs\node_*.log"

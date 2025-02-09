@@ -1,17 +1,19 @@
 #include "node.h"
 #include "simulator.h"
+#include <queue>
 
 using namespace std;
 
-Node:: Node(int id_, bool is_slow_ , ld Ttx_,ld Tk_, ld hash_power_ , Block* genesis_blk_){
+Node:: Node(int id_, bool is_slow_ ,bool is_highhash_, ld Ttx_,ld Tk_, ld hash_power_ , Block* genesis_blk_){
     id = id_;
     is_slow = is_slow_;
+    is_highhash = is_highhash_;
     Ttx = Ttx_;
     Tk = Tk_;
     hash_power = hash_power_;
     genesis_blk = genesis_blk_;
     generate_Ttx = exponential_distribution<ld>(1/Ttx);
-    generate_tk = exponential_distribution<ld>(1/Tk);
+    generate_tk = exponential_distribution<ld>(hash_power/Tk);
     select_rand_real = uniform_real_distribution<ld>(0,1);
 }
 
@@ -43,11 +45,11 @@ void Node:: send_txn(int peer_id, Txn* T,simulator* simul){
 
 // Receive Txn from peer and loop-less forward it
 
-bool Node:: recv_txn(int peer_id, Txn* T, simulator* simul){
+void Node:: recv_txn(int peer_id, Txn* T, simulator* simul){
 
     longest_chain = *tail_blks.begin();
-    if(!is_txn_valid(T,longest_chain->wallet)) return false;
-    if(AllTxns.find(T->id) != AllTxns.end())  return false; 
+    if(!is_txn_valid(T,longest_chain->wallet)) return ;
+    if(AllTxns.find(T->id) != AllTxns.end())  return ; 
 
     // cout<<"Created Events :" <<endl;
     AllTxns[T->id] = T;
@@ -60,7 +62,7 @@ bool Node:: recv_txn(int peer_id, Txn* T, simulator* simul){
         send_txn(i,T,simul);
     }
 
-    return true;
+    return ;
 }
 
 // Creates a transaction adds RECV_TXN to event queue with latency delay 
@@ -134,9 +136,11 @@ void Node::mine_new_blk(simulator* simul){
 }
 
 void Node::mining_success(Block* B,simulator* simul,bool stop_mining){
-    cout << "Node :[" << id  << "] Created Events" <<endl;
     longest_chain = *tail_blks.begin();
+    B->recvdtime = simul->simclock;
     if(B->id == mining_blk->id && B->parent_id == longest_chain->tail->id){
+        numMinedblks += 1;
+        cout << "Node :[" << id  << "] - ";
         cout<<"Mining Success : ";
         cout<<*B<<endl;
         AllBlks[B->id] = B;
@@ -144,13 +148,14 @@ void Node::mining_success(Block* B,simulator* simul,bool stop_mining){
         tail_blks.erase(longest_chain);
         longest_chain->update_tail(B);
         tail_blks.insert(longest_chain);
-        cout << "Block added to longest chain" <<endl;
+        // cout << "Block added to longest chain" <<endl;
+        children[B->parent_id].push_back(B->id);
         for(Txn* T: B->Txn_list){
             txn_pool.erase(T);
         }
         if(!stop_mining) mine_new_blk(simul);
     }
-    else cout<<"Mining Failure"<<endl;
+    // else cout<<"Mining Failure"<<endl;
 }
 
 bool Node:: is_blk_valid(Block* B, chain* c){
@@ -163,24 +168,25 @@ bool Node:: is_blk_valid(Block* B, chain* c){
             temp_wallet[T->payer_id] -= T->amount;
             temp_wallet[T->payee_id] += T->amount;
         }else{
-            cout << "Invalid Transaction found : " <<*T<<endl;
+            // cout << "Invalid Transaction found : " <<*T<<endl;
             return false;
         }
     }
     return true;
 }
 
-bool Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
+void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
 
-    cout << "Node :[" << id  << "] Created Events" <<endl;
-    if(AllBlks.find(B->id) != AllBlks.end()) return false;    // Block already received
+    // cout << "Node :[" << id  << "] Created Events" <<endl;
+    if(AllBlks.find(B->id) != AllBlks.end()) return;    // Block already received
     AllBlks[B->id] = B;
+    B->recvdtime = simul->simclock;
     longest_chain = *tail_blks.begin();
-    cout << "Longest branch Tail [" << longest_chain->tail->id <<"]" <<endl;
+    // cout << "Longest branch Tail [" << longest_chain->tail->id <<"]" <<endl;
     if(B->parent_id == longest_chain->tail->id) {
         if(!is_blk_valid(B,longest_chain)) {
-            cout<<"Invalid Block" <<endl;
-            return false;
+            // cout<<"Invalid Block" <<endl;
+            return;
         }
         for(int i:adj_peers){
             if(peer_id == i) continue;
@@ -193,17 +199,18 @@ bool Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
             txn_pool.erase(T);
         }
         if(!stop_mining) mine_new_blk(simul);
-        cout << "Block added to longest chain" <<endl;
-        printBlockTree();
-        return true;
+        // cout << "Block added to longest chain" <<endl;
+        // printBlockTree();
+        children[B->parent_id].push_back(B->id);
+        return;
     }
 
-    cout << "Checking branches" <<endl;
+    // cout << "Checking branches" <<endl;
     for(chain *c: tail_blks){
         if(c->tail->id ==  B->parent_id){
             if(!is_blk_valid(B,c)) {
-                cout<<"Invalid block"<<endl;
-                return false;
+                // cout<<"Invalid block"<<endl;
+                return;
             }
             for(int i:adj_peers){
                 if(peer_id == i) continue;
@@ -212,9 +219,10 @@ bool Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
             tail_blks.erase(c);
             c->update_tail(B);
             tail_blks.insert(c);
+            children[B->parent_id].push_back(B->id);
             if(c->depth > longest_chain->depth){
-                cout <<"New Longest Branch tail - "<< c->tail->id <<endl;
-                printBlockTree();
+                // cout <<"New Longest Branch tail - "<< c->tail->id <<endl;
+                // printBlockTree();
                 for(int txn_id: longest_chain->added_txns){
                     txn_pool.insert(AllTxns[txn_id]);
                 }
@@ -223,22 +231,22 @@ bool Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
                 }
             }
             else {
-                cout << "Block added to branch" <<endl;
-                printBlockTree();
+                // cout << "Block added to branch" <<endl;
+                // printBlockTree();
             }
-            return true;
+            return;
         }
     }
 
     if(AllBlks.find(B->parent_id) == AllBlks.end()){
         cout<< "Orphan Block" <<endl;
-        return false;
+        return;
     }
 
     cout <<"Creating new chain" <<endl;
 
     Block* temp_blk = AllBlks[B->parent_id];
-    chain* c = new chain(temp_blk,0,simul->numNodes,0);
+    chain* c = new chain(temp_blk,0,simul->numNodes,CAPITAL);
     while(temp_blk->id != 0){
         c->depth += 1;
         for(Txn* T: temp_blk->Txn_list){
@@ -254,78 +262,128 @@ bool Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
         if(AllBlks.find(temp_blk->parent_id) == AllBlks.end()) {
             delete c;
             cout<<"Orphan Block" <<endl;
-            return false;
+            return;
         }
         temp_blk = AllBlks[temp_blk->parent_id];
     }
 
     if(!is_blk_valid(B,c)){
-        cout << "Invalid Block" <<endl;
+        // cout << "Invalid Block" <<endl;
         delete c;
-        return false;
+        return;
     }
+
+    for(int i:adj_peers){
+        if(peer_id == i) continue;
+        send_blk(i,B,simul);
+    }
+
+    children[B->parent_id].push_back(B->id);
 
     c->update_tail(B);
     tail_blks.insert(c);
 
-    cout << "Created New Chain ending at "<< c->tail->id <<endl;
-    return true;
+    if(c->depth > longest_chain->depth){
+        // cout <<"New Longest Branch tail - "<< c->tail->id <<endl;
+        // printBlockTree();
+        for(int txn_id: longest_chain->added_txns){
+            txn_pool.insert(AllTxns[txn_id]);
+        }
+        for(int txn_id: c->added_txns){
+            txn_pool.erase(AllTxns[txn_id]);
+        }
+    }
+    else {
+        // cout << "Block added to branch" <<endl;
+        // printBlockTree();
+    }
+
+    // cout << "Created New Chain ending at "<< c->tail->id <<endl;
+    return ;
 }
 
-ostream& operator <<(ostream& os, const Node& node) {
-    os << "Node ID: " << node.id << "\n";
-    // os << "Is Slow: " << (node.is_slow ? "Yes" : "No") << "\n";
-    // os << "Mean Interval Time for Transactions (Ttx): " << node.Ttx << "\n";
-    // os << "Number of Mined Blocks: " << node.numMinedblks << "\n";
-    // os << "Hash Power: " << node.hash_power << "\n";
-
-    // os << "Adjacent Peers: ";
-    // for (const auto& peer : node.adj_peers) os << peer << " ";
-    // os << "\n";
-
-    // os << "Latency Info:\n";
-    // for (const auto& [peer, link] : node.latency) 
-    //     os << "  Peer " << peer << " -> Latency: " << *link << "\n";  // Assuming Link has an appropriate overload for <<
-
-    os << "Transaction Pool:\n";
-    for (const auto& txn : node.txn_pool) os << "  " << *txn << "\n";  // Assuming Txn has an appropriate overload for <<
-
-    return os; 
-}
 
 // Recursive function to print the tree
-void Node::printTree(int block_id, const std::unordered_map<int, std::vector<int>>& children, int depth) {
-    std::cout << std::string(depth * 4, ' ') << "└─ Block ID: " << block_id << "\n";
+void Node::printTree(int block_id, ostream &os, int depth) {
+    os << std::string(depth * 4, ' ') << "└─ Block ID: " << block_id << ", RECVD-TIME: "<< AllBlks[block_id]->recvdtime << "\n";
     
     // Recursively print children
     if (children.find(block_id) != children.end()) {
         for (int child_id : children.at(block_id)) {
-            printTree(child_id, children, depth + 1);
+            printTree(child_id,os, depth + 1);
         }
     }
 }
 
-// Function to print the entire blockchain tree
-void Node::printBlockTree() {
-    std::unordered_map<int, std::vector<int>> children;
-    std::vector<int> roots;
-
-    // Find root blocks and build the child map
-    for (const auto& [id, blk] : AllBlks) {
-        if (AllBlks.find(blk->parent_id) == AllBlks.end()) {
-            roots.push_back(id);
-        }
-        children[blk->parent_id].push_back(id);
+Node::~Node(){
+    // Free memory allocated for latency links
+    for (auto& pair : latency) {
+        delete pair.second;
     }
+    latency.clear();
 
-    // Print each root and its subtree
-    for (int root_id : roots) {
-        printTree(root_id, children);
+    // Free all transactions
+    for (auto& pair : AllTxns) {
+        delete pair.second;
     }
+    AllTxns.clear();
 
-    cout << "Balance [ ";
-    for(int i = 0; i< longest_chain->wallet.size();i++){
-        cout << i << ": " << longest_chain->wallet[i] << ", " ;
-    } 
-    cout << " ]"<<endl;
+    // Free all blocks
+    for (auto& pair : AllBlks) {
+        delete pair.second;
+    }
+    AllBlks.clear();
+
+    // Free chains
+    for (auto chain_ptr : tail_blks) {
+        delete chain_ptr;
+    }
+    tail_blks.clear();
+
+    // Free the block being mined
+    delete mining_blk;
+}
+
+void Node::print_stats(simulator* simul,ostream &os){
+
+    int lowHash_blks = 0;
+    int highHash_blks = 0;
+    int slowNode_blks = 0;
+    int fastNode_blks = 0;
+
+    os << "Node ID: " << id << "\n";
+    os << "Is Slow: " << (is_slow ? "Yes" : "No") << "\n";
+    os << "Is High hash power: " << (is_highhash ? "Yes" : "No") << "\n";
+    os << "Mean Interval Time for Transactions (Ttx): " << Ttx << "\n";
+    os << "Average Time for Mining (Tk): " << Tk << "\n";
+    os << "Number of Mined Blocks: " << numMinedblks << "\n";
+    os << "Hash Power: " << hash_power << "\n";
+
+    vector<int> cnt_blks = vector<int>(simul->numNodes,0);
+    
+    longest_chain = *tail_blks.begin();
+    int blk_id = longest_chain->tail->id;
+
+    while(blk_id != 0){
+        cnt_blks[AllBlks[blk_id]->Txn_list[0]->payee_id]++;
+        blk_id = AllBlks[blk_id]->parent_id;
+    }
+    os << "Total No of mined blocks : " << simul->total_mined_blks <<endl;
+    os << "Longest chain length : " << longest_chain->depth <<endl;
+
+    os << "No of mined blocks of each node in longest chain : ";
+    for(int i =0 ; i < simul->numNodes ; i++){
+        if(simul->nodes[i]->is_slow) slowNode_blks += cnt_blks[i];
+        else fastNode_blks += cnt_blks[i];
+        if(simul->nodes[i]->is_highhash) highHash_blks += cnt_blks[i];
+        else lowHash_blks += cnt_blks[i];
+        os << cnt_blks[i] << " ";
+    }
+    os <<endl;
+    os << "Total No of Blocks mined by Slow Nodes :" << slowNode_blks <<endl;
+    os << "Total No of Blocks mined by Fast Nodes :" << fastNode_blks <<endl;
+    os << "Total No of Blocks mined by High hash power Nodes :" << highHash_blks <<endl;
+    os << "Total No of Blocks mined by Low Hash power Nodes :" << lowHash_blks <<endl;
+
+    printTree(0,os);
 }

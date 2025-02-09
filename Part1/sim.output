@@ -1,3098 +1,381 @@
-Network printing
-Peer 0 connected to: 3 12 5 
-Peer 1 connected to: 9 7 14 17 12 
-Peer 2 connected to: 8 16 4 
-Peer 3 connected to: 9 15 8 0 
-Peer 4 connected to: 11 5 14 6 2 
-Peer 5 connected to: 10 4 19 6 0 
-Peer 6 connected to: 10 5 17 4 
-Peer 7 connected to: 13 8 1 16 
-Peer 8 connected to: 7 3 2 
-Peer 9 connected to: 18 1 3 15 
-Peer 10 connected to: 16 12 5 6 
-Peer 11 connected to: 18 12 4 19 
-Peer 12 connected to: 11 10 14 1 0 
-Peer 13 connected to: 15 17 7 
-Peer 14 connected to: 12 4 1 
-Peer 15 connected to: 13 9 3 
-Peer 16 connected to: 10 7 2 
-Peer 17 connected to: 18 19 6 13 1 
-Peer 18 connected to: 9 11 17 
-Peer 19 connected to: 17 5 11 
-Node :[0] Created Events
-Mining Success :  Block ID:[1] Parent ID: [0]
-Block added to longest chain
-Node :[12] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[14] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[5] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[1] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[11] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[17] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[7] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[3] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[18] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[9] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[12] Created Events
-Node :[8] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[19] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[10] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[15] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[8] Created Events
-Node :[18] Created Events
-Node :[10] Created Events
-Node :[4] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[17] Created Events
-Node :[3] Created Events
-Node :[19] Created Events
-Node :[2] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[19] Created Events
-Node :[16] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[13] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[1] Created Events
-Node :[6] Created Events
-Longest branch Tail [0]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-Balance [ 0: 58, 1: 16, 2: 43, 3: 39, 4: 1, 5: 1, 6: 21, 7: 11, 8: 34, 9: 43, 10: 33, 11: 19, 12: 25, 13: 15, 14: 33, 15: 2, 16: 17, 17: 25, 18: 11, 19: 3,  ]
-Node :[3] Created Events
-Node :[4] Created Events
-Node :[3] Created Events
-Node :[4] Created Events
-Node :[11] Created Events
-Node :[9] Created Events
-Node :[13] Created Events
-Node :[16] Created Events
-Node :[7] Created Events
-Node :[14] Created Events
-Node :[15] Created Events
-Node :[9] Created Events
-Node :[17] Created Events
-Node :[13] Created Events
-Node :[6] Created Events
-Node :[16] Created Events
-Node :[4] Created Events
-Node :[15] Created Events
-Node :[2] Created Events
-Node :[17] Created Events
-Node :[18] Created Events
-Node :[5] Created Events
-Node :[8] Created Events
-Node :[6] Created Events
-Node :[5] Created Events
-Node :[2] Created Events
-Node :[17] Created Events
-Node :[6] Created Events
-Node :[10] Created Events
-Node :[6] Created Events
-Mining Failure
-Node :[6] Created Events
-Mining Success :  Block ID:[40] Parent ID: [1]
-Block added to longest chain
-Node :[4] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[2] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[5] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[17] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[0] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[19] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[1] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[14] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[7] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[10] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[14] Created Events
-Node :[10] Created Events
-Node :[16] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[18] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[16] Created Events
-Node :[1] Created Events
-Node :[9] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[19] Created Events
-Node :[12] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[8] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[10] Created Events
-Node :[5] Created Events
-Node :[8] Created Events
-Node :[12] Created Events
-Node :[4] Created Events
-Node :[15] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[14] Created Events
-Node :[3] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[12] Created Events
-Node :[11] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[7] Created Events
-Node :[11] Created Events
-Node :[11] Created Events
-Node :[3] Created Events
-Node :[13] Created Events
-Longest branch Tail [1]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-Balance [ 0: 43, 1: 31, 2: 25, 3: 37, 4: 15, 5: 11, 6: 79, 7: 15, 8: 42, 9: 31, 10: 3, 11: 19, 12: 35, 13: 29, 14: 2, 15: 10, 16: 16, 17: 30, 18: 13, 19: 14,  ]
-Node :[12] Created Events
-Node :[17] Created Events
-Node :[18] Created Events
-Node :[8] Created Events
-Node :[3] Created Events
-Node :[13] Created Events
-Node :[13] Created Events
-Node :[11] Created Events
-Node :[3] Created Events
-Node :[16] Created Events
-Node :[0] Created Events
-Node :[4] Created Events
-Node :[9] Created Events
-Node :[0] Created Events
-Node :[6] Created Events
-Node :[10] Created Events
-Node :[12] Created Events
-Node :[15] Created Events
-Node :[18] Created Events
-Node :[15] Created Events
-Node :[17] Created Events
-Node :[2] Created Events
-Node :[9] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[16] Created Events
-Mining Success :  Block ID:[52] Parent ID: [40]
-Block added to longest chain
-Node :[10] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[7] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[12] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[1] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[17] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[14] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[8] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[2] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[14] Created Events
-Node :[9] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[11] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[1] Created Events
-Node :[12] Created Events
-Node :[13] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[6] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[0] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[19] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[15] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[4] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[3] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[3] Created Events
-Node :[19] Created Events
-Node :[18] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[2] Created Events
-Node :[18] Created Events
-Node :[5] Created Events
-Longest branch Tail [40]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-Balance [ 0: 17, 1: 3, 2: 39, 3: 14, 4: 62, 5: 27, 6: 63, 7: 17, 8: 25, 9: 22, 10: 0, 11: 24, 12: 12, 13: 21, 14: 4, 15: 21, 16: 52, 17: 0, 18: 89, 19: 38,  ]
-Node :[8] Created Events
-Node :[1] Created Events
-Node :[4] Created Events
-Node :[17] Created Events
-Node :[11] Created Events
-Node :[4] Created Events
-Node :[13] Created Events
-Node :[6] Created Events
-Node :[2] Created Events
-Node :[4] Created Events
-Node :[17] Created Events
-Node :[14] Created Events
-Node :[5] Created Events
-Node :[8] Created Events
-Node :[15] Created Events
-Node :[0] Created Events
-Node :[5] Created Events
-Node :[3] Created Events
-Node :[13] Created Events
-Node :[18] Created Events
-Node :[0] Created Events
-Node :[5] Created Events
-Node :[19] Created Events
-Node :[6] Created Events
-Node :[11] Created Events
-Node :[3] Created Events
-Node :[6] Created Events
-Node :[15] Created Events
-Node :[4] Created Events
-Node :[5] Created Events
-Node :[9] Created Events
-Node :[8] Created Events
-Mining Failure
-Node :[8] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[13] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Success :  Block ID:[77] Parent ID: [52]
-Block added to longest chain
-Node :[2] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[14] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[16] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[1] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[17] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[7] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[8] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[10] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[15] Created Events
-Mining Success :  Block ID:[76] Parent ID: [52]
-Block added to longest chain
-Node :[9] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[11] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[6] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[7] Created Events
-Node :[5] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[12] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[8] Created Events
-Node :[14] Created Events
-Node :[12] Created Events
-Node :[12] Created Events
-Node :[19] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[11] Created Events
-Node :[15] Created Events
-Longest branch Tail [76]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[1.08051] Txn ID:[23] [15] Pays [8] Amount: 11
-
-Invalid Block
-Node :[13] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[18] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[3] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[3] Created Events
-Longest branch Tail [77]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[1.08051] Txn ID:[23] [15] Pays [8] Amount: 11
-
-Invalid Block
-Node :[18] Created Events
-Node :[0] Created Events
-Longest branch Tail [52]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-Balance [ 0: 10, 1: 12, 2: 1, 3: 6, 4: 94, 5: 33, 6: 25, 7: 18, 8: 4, 9: 3, 10: 27, 11: 1, 12: 2, 13: 15, 14: 44, 15: 34, 16: 44, 17: 15, 18: 145, 19: 67,  ]
-Node :[19] Created Events
-Node :[7] Created Events
-Node :[13] Created Events
-Longest branch Tail [77]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[1.08051] Txn ID:[23] [15] Pays [8] Amount: 11
-
-Invalid Block
-Node :[16] Created Events
-Node :[12] Created Events
-Node :[0] Created Events
-Node :[3] Created Events
-Node :[9] Created Events
-Longest branch Tail [77]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[1.08051] Txn ID:[23] [15] Pays [8] Amount: 11
-
-Invalid Block
-Node :[17] Created Events
-Node :[19] Created Events
-Node :[11] Created Events
-Node :[6] Created Events
-Node :[10] Created Events
-Node :[13] Created Events
-Node :[10] Created Events
-Node :[6] Created Events
-Node :[5] Created Events
-Node :[17] Created Events
-Node :[8] Created Events
-Node :[5] Created Events
-Node :[5] Created Events
-Node :[6] Created Events
-Node :[10] Created Events
-Node :[12] Created Events
-Node :[18] Created Events
-Node :[15] Created Events
-Node :[0] Created Events
-Node :[11] Created Events
-Node :[9] Created Events
-Node :[15] Created Events
-Node :[3] Created Events
-Node :[19] Created Events
-Mining Success :  Block ID:[96] Parent ID: [77]
-Block added to longest chain
-Node :[11] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[17] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[5] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[1] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[4] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[7] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[2] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[18] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[14] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[12] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[14] Created Events
-Node :[9] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[12] Created Events
-Node :[8] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[0] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[14] Created Events
-Node :[18] Created Events
-Node :[13] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[16] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[17] Created Events
-Node :[10] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[0] Created Events
-Node :[13] Created Events
-Node :[6] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[12] Created Events
-Node :[15] Created Events
-Longest branch Tail [76]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[22.2937] Txn ID:[93] [10] Pays [8] Amount: 22
-
-Invalid Block
-Node :[8] Created Events
-Node :[16] Created Events
-Node :[10] Created Events
-Node :[10] Created Events
-Node :[16] Created Events
-Node :[3] Created Events
-Longest branch Tail [77]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-Balance [ 0: 9, 1: 36, 2: 17, 3: 20, 4: 15, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 2, 12: 76, 13: 18, 14: 16, 15: 25, 16: 42, 17: 205, 18: 12, 19: 75,  ]
-Node :[4] Created Events
-Node :[6] Created Events
-Node :[12] Created Events
-Node :[6] Created Events
-Node :[7] Created Events
-Node :[12] Created Events
-Node :[3] Created Events
-Node :[1] Created Events
-Node :[4] Created Events
-Node :[5] Created Events
-Node :[9] Created Events
-Node :[4] Created Events
-Node :[17] Created Events
-Node :[2] Created Events
-Node :[15] Created Events
-Node :[8] Created Events
-Node :[18] Created Events
-Node :[6] Created Events
-Node :[5] Created Events
-Node :[3] Created Events
-Node :[0] Created Events
-Node :[10] Created Events
-Node :[15] Created Events
-Node :[16] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[19] Created Events
-Mining Failure
-Node :[11] Created Events
-Mining Failure
-Node :[5] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[19] Created Events
-Mining Success :  Block ID:[101] Parent ID: [96]
-Block added to longest chain
-Node :[11] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[17] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[5] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[18] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[1] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[4] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[7] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[2] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[14] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[12] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[0] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[14] Created Events
-Node :[9] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[12] Created Events
-Node :[8] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[18] Created Events
-Node :[17] Created Events
-Node :[14] Created Events
-Node :[10] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[11] Created Events
-Mining Failure
-Node :[15] Created Events
-Longest branch Tail [76]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[54.5274] Txn ID:[159] [10] Pays [8] Amount: 27
-
-Invalid Block
-Node :[16] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[3] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[13] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[16] Created Events
-Node :[12] Created Events
-Node :[0] Created Events
-Node :[4] Created Events
-Node :[13] Created Events
-Node :[12] Created Events
-Node :[6] Created Events
-Longest branch Tail [96]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-Balance [ 0: 17, 1: 43, 2: 5, 3: 17, 4: 32, 5: 1, 6: 13, 7: 23, 8: 0, 9: 3, 10: 57, 11: 9, 12: 64, 13: 72, 14: 49, 15: 84, 16: 6, 17: 140, 18: 9, 19: 56,  ]
-Node :[6] Created Events
-Node :[8] Created Events
-Node :[12] Created Events
-Node :[10] Created Events
-Node :[16] Created Events
-Node :[9] Created Events
-Node :[3] Created Events
-Node :[7] Created Events
-Node :[6] Created Events
-Node :[8] Created Events
-Node :[4] Created Events
-Node :[1] Created Events
-Node :[5] Created Events
-Node :[4] Created Events
-Node :[17] Created Events
-Node :[2] Created Events
-Node :[3] Created Events
-Node :[2] Created Events
-Node :[15] Created Events
-Node :[0] Created Events
-Node :[18] Created Events
-Node :[6] Created Events
-Node :[5] Created Events
-Node :[15] Created Events
-Node :[10] Created Events
-Node :[5] Created Events
-Mining Success :  Block ID:[123] Parent ID: [101]
-Block added to longest chain
-Node :[0] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[19] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[10] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[16] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[6] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[4] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[12] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[2] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[11] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[12] Created Events
-Node :[14] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[7] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[17] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[11] Created Events
-Node :[1] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[17] Created Events
-Node :[7] Created Events
-Node :[4] Created Events
-Node :[1] Created Events
-Node :[14] Created Events
-Node :[18] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[8] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[1] Created Events
-Node :[2] Created Events
-Node :[4] Created Events
-Node :[9] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[17] Created Events
-Node :[3] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[16] Created Events
-Node :[6] Created Events
-Node :[12] Created Events
-Node :[12] Created Events
-Node :[10] Created Events
-Node :[8] Created Events
-Node :[13] Created Events
-Longest branch Tail [101]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-Balance [ 0: 2, 1: 28, 2: 22, 3: 12, 4: 1, 5: 60, 6: 35, 7: 29, 8: 14, 9: 21, 10: 17, 11: 45, 12: 10, 13: 87, 14: 105, 15: 86, 16: 1, 17: 141, 18: 15, 19: 19,  ]
-Node :[18] Created Events
-Node :[17] Created Events
-Node :[15] Created Events
-Longest branch Tail [76]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[67.7396] Txn ID:[185] [10] Pays [8] Amount: 24
-
-Invalid Block
-Node :[11] Created Events
-Node :[6] Created Events
-Node :[3] Created Events
-Node :[10] Created Events
-Node :[1] Created Events
-Node :[3] Created Events
-Node :[8] Created Events
-Node :[4] Created Events
-Node :[13] Created Events
-Node :[6] Created Events
-Node :[9] Created Events
-Node :[17] Created Events
-Node :[9] Created Events
-Node :[2] Created Events
-Node :[15] Created Events
-Node :[15] Created Events
-Node :[18] Created Events
-Node :[13] Created Events
-Mining Failure
-Node :[19] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[13] Created Events
-Mining Failure
-Node :[2] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[11] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[18] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[8] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Success :  Block ID:[142] Parent ID: [123]
-Block added to longest chain
-Node :[16] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[12] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[14] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[7] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[11] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[1] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[1] Created Events
-Node :[7] Created Events
-Node :[17] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[8] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[2] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[18] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[9] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[5] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[6] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[0] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[12] Created Events
-Node :[13] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[15] Created Events
-Longest branch Tail [76]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[51.6614] Txn ID:[154] [11] Pays [7] Amount: 17
-
-Invalid Block
-Node :[3] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[18] Created Events
-Node :[4] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[19] Created Events
-Longest branch Tail [123]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-Balance [ 0: 6, 1: 28, 2: 32, 3: 2, 4: 22, 5: 208, 6: 5, 7: 60, 8: 0, 9: 0, 10: 62, 11: 5, 12: 16, 13: 95, 14: 131, 15: 100, 16: 1, 17: 11, 18: 15, 19: 1,  ]
-Node :[3] Created Events
-Node :[2] Created Events
-Node :[0] Created Events
-Node :[17] Created Events
-Node :[19] Created Events
-Node :[8] Created Events
-Node :[19] Created Events
-Node :[1] Created Events
-Node :[4] Created Events
-Node :[4] Created Events
-Node :[5] Created Events
-Node :[14] Created Events
-Node :[8] Created Events
-Node :[17] Created Events
-Node :[15] Created Events
-Node :[0] Created Events
-Node :[17] Created Events
-Node :[6] Created Events
-Node :[4] Created Events
-Node :[13] Created Events
-Node :[5] Created Events
-Node :[9] Created Events
-Node :[5] Created Events
-Node :[6] Created Events
-Node :[2] Created Events
-Node :[17] Created Events
-Node :[18] Created Events
-Node :[4] Created Events
-Node :[15] Created Events
-Node :[5] Created Events
-Node :[3] Created Events
-Node :[6] Created Events
-Node :[2] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[8] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Failure
-Node :[9] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Failure
-Node :[2] Created Events
-Mining Failure
-Node :[13] Created Events
-Mining Failure
-Node :[18] Created Events
-Mining Failure
-Node :[8] Created Events
-Mining Failure
-Node :[11] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Success :  Block ID:[175] Parent ID: [142]
-Block added to longest chain
-Node :[2] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[14] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[16] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[1] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[7] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[17] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[8] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[10] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[9] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[11] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[6] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[7] Created Events
-Node :[12] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[8] Created Events
-Node :[5] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[14] Created Events
-Node :[12] Created Events
-Node :[12] Created Events
-Node :[19] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[11] Created Events
-Node :[13] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[15] Created Events
-Longest branch Tail [76]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[159.296] Txn ID:[399] [2] Pays [10] Amount: 18
-
-Invalid Block
-Node :[18] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[19] Created Events
-Node :[3] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[18] Created Events
-Node :[7] Created Events
-Node :[0] Created Events
-Longest branch Tail [142]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-Balance [ 0: 30, 1: 6, 2: 50, 3: 36, 4: 84, 5: 97, 6: 12, 7: 63, 8: 9, 9: 3, 10: 2, 11: 51, 12: 40, 13: 40, 14: 30, 15: 9, 16: 38, 17: 12, 18: 231, 19: 7,  ]
-Node :[16] Created Events
-Node :[12] Created Events
-Node :[0] Created Events
-Node :[3] Created Events
-Node :[17] Created Events
-Node :[11] Created Events
-Node :[6] Created Events
-Node :[10] Created Events
-Node :[5] Created Events
-Node :[19] Created Events
-Node :[13] Created Events
-Node :[6] Created Events
-Node :[10] Created Events
-Node :[17] Created Events
-Node :[5] Created Events
-Node :[5] Created Events
-Node :[10] Created Events
-Node :[17] Created Events
-Node :[6] Created Events
-Node :[12] Created Events
-Node :[15] Created Events
-Node :[18] Created Events
-Node :[0] Created Events
-Node :[9] Created Events
-Node :[15] Created Events
-Node :[9] Created Events
-Node :[3] Created Events
-Node :[11] Created Events
-Mining Failure
-Remaining Events in the queue
-Node :[13] Created Events
-Mining Failure
-Node :[5] Created Events
-Mining Failure
-Node :[0] Created Events
-Mining Failure
-Node :[14] Created Events
-Mining Failure
-Node :[13] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[15] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[5] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[14] Created Events
-Mining Failure
-Node :[13] Created Events
-Mining Failure
-Node :[9] Created Events
-Mining Failure
-Node :[9] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Failure
-Node :[18] Created Events
-Mining Failure
-Node :[0] Created Events
-Mining Failure
-Node :[19] Created Events
-Mining Failure
-Node :[14] Created Events
-Mining Failure
-Node :[9] Created Events
-Mining Success :  Block ID:[186] Parent ID: [175]
-Block added to longest chain
-Node :[15] Created Events
-Longest branch Tail [76]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[84.0022] Txn ID:[218] [3] Pays [16] Amount: 28
-
-Invalid Block
-Node :[3] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[1] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[17] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[7] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[8] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[14] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[12] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[8] Created Events
-Node :[14] Created Events
-Node :[18] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[0] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[19] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[11] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[13] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[15] Created Events
-Node :[18] Created Events
-Node :[12] Created Events
-Node :[7] Created Events
-Node :[16] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[17] Created Events
-Node :[0] Created Events
-Node :[12] Created Events
-Node :[11] Created Events
-Node :[10] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[10] Created Events
-Node :[13] Created Events
-Node :[6] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[4] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[19] Created Events
-Node :[2] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[4] Created Events
-Node :[18] Created Events
-Node :[2] Created Events
-Node :[16] Created Events
-Node :[5] Created Events
-Longest branch Tail [175]
-Block added to longest chain
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-Node :[17] Created Events
-Node :[11] Created Events
-Node :[15] Created Events
-Node :[5] Created Events
-Node :[4] Created Events
-Node :[2] Created Events
-Node :[14] Created Events
-Node :[16] Created Events
-Node :[0] Created Events
-Node :[5] Created Events
-Node :[6] Created Events
-Node :[10] Created Events
-Node :[6] Created Events
-Node :[10] Created Events
-Node :[4] Created Events
-Node :[5] Created Events
-Node :[5] Created Events
-Node :[6] Created Events
-Node :[4] Created Events
-Node :[14] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Failure
-Node :[11] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Failure
-Node :[9] Created Events
-Mining Failure
-Node :[5] Created Events
-Mining Failure
-Node :[2] Created Events
-Mining Failure
-Node :[18] Created Events
-Mining Failure
-Node :[5] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Failure
-Node :[16] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[14] Created Events
-Mining Failure
-Node :[8] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[11] Created Events
-Mining Failure
-Node :[6] Created Events
-Mining Failure
-Node :[2] Created Events
-Mining Failure
-Node :[0] Created Events
-Mining Failure
-Node :[11] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[16] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[14] Created Events
-Mining Failure
-Node :[16] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[16] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[14] Created Events
-Mining Failure
-Node :[5] Created Events
-Mining Failure
-Node :[8] Created Events
-Mining Failure
-Node :[13] Created Events
-Mining Failure
-Node :[13] Created Events
-Mining Failure
-Node :[9] Created Events
-Mining Failure
-Node :[18] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[5] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[15] Created Events
-Mining Failure
-Node :[5] Created Events
-Mining Failure
-Node :[0] Created Events
-Mining Failure
-Node :[19] Created Events
-Mining Failure
-Node :[15] Created Events
-Mining Success :  Block ID:[90] Parent ID: [76]
-Block added to longest chain
-Node :[3] Created Events
-Longest branch Tail [186]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[22.2937] Txn ID:[93] [10] Pays [8] Amount: 22
-
-Invalid Block
-Node :[9] Created Events
-Longest branch Tail [186]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[22.2937] Txn ID:[93] [10] Pays [8] Amount: 22
-
-Invalid Block
-Node :[13] Created Events
-Longest branch Tail [186]
-Checking branches
-Creating new chain
-Invalid Transaction found : Time:[22.2937] Txn ID:[93] [10] Pays [8] Amount: 22
-
-Invalid Block
-Node :[18] Created Events
-Mining Failure
-Node :[18] Created Events
-Mining Failure
-Node :[0] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[19] Created Events
-Mining Failure
-Node :[6] Created Events
-Mining Failure
-Node :[16] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[14] Created Events
-Mining Failure
-Node :[2] Created Events
-Mining Failure
-Node :[6] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[9] Created Events
-Mining Failure
-Node :[19] Created Events
-Mining Failure
-Node :[0] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Failure
-Node :[0] Created Events
-Mining Failure
-Node :[15] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[8] Created Events
-Mining Failure
-Node :[13] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[9] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[2] Created Events
-Mining Failure
-Node :[14] Created Events
-Mining Failure
-Node :[19] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[6] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[2] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[5] Created Events
-Mining Failure
-Node :[11] Created Events
-Mining Failure
-Node :[0] Created Events
-Mining Failure
-Node :[0] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[18] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Failure
-Node :[16] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[6] Created Events
-Mining Failure
-Node :[6] Created Events
-Mining Failure
-Node :[6] Created Events
-Mining Failure
-Node :[18] Created Events
-Mining Failure
-Node :[2] Created Events
-Mining Failure
-Node :[1] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[11] Created Events
-Mining Failure
-Node :[14] Created Events
-Mining Failure
-Node :[17] Created Events
-Mining Failure
-Node :[3] Created Events
-Mining Failure
-Node :[6] Created Events
-Mining Failure
-Node :[12] Created Events
-Mining Failure
-Node :[18] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Failure
-Node :[7] Created Events
-Mining Failure
-Node :[8] Created Events
-Mining Failure
-Node :[9] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Failure
-Node :[16] Created Events
-Mining Failure
-Node :[8] Created Events
-Mining Failure
-Node :[16] Created Events
-Mining Failure
-Node :[19] Created Events
-Mining Failure
-Node :[10] Created Events
-Mining Failure
-Node :[2] Created Events
-Mining Failure
-Node :[4] Created Events
-Mining Failure
+Node :[7] - Mining Success :  Block ID:[8] Parent ID: [0]
+Node :[33] - Mining Success :  Block ID:[79] Parent ID: [8]
+Node :[20] - Mining Success :  Block ID:[87] Parent ID: [79]
+Node :[38] - Mining Success :  Block ID:[149] Parent ID: [87]
+Node :[5] - Mining Success :  Block ID:[181] Parent ID: [149]
+Node :[13] - Mining Success :  Block ID:[218] Parent ID: [181]
+Node :[11] - Mining Success :  Block ID:[265] Parent ID: [218]
+Node :[36] - Mining Success :  Block ID:[312] Parent ID: [265]
+Node :[23] - Mining Success :  Block ID:[329] Parent ID: [312]
+Node :[39] - Mining Success :  Block ID:[365] Parent ID: [329]
+Node :[36] - Mining Success :  Block ID:[428] Parent ID: [365]
+Node :[21] - Mining Success :  Block ID:[476] Parent ID: [428]
+Node :[7] - Mining Success :  Block ID:[482] Parent ID: [476]
+Node :[39] - Mining Success :  Block ID:[530] Parent ID: [482]
+Node :[4] - Mining Success :  Block ID:[562] Parent ID: [530]
+Node :[27] - Mining Success :  Block ID:[618] Parent ID: [562]
+Node :[9] - Mining Success :  Block ID:[647] Parent ID: [618]
+Node :[5] - Mining Success :  Block ID:[711] Parent ID: [647]
+Node :[1] - Mining Success :  Block ID:[751] Parent ID: [711]
+Node :[2] - Mining Success :  Block ID:[764] Parent ID: [751]
+Node :[22] - Mining Success :  Block ID:[829] Parent ID: [764]
+Node :[2] - Mining Success :  Block ID:[861] Parent ID: [829]
+Node :[27] - Mining Success :  Block ID:[885] Parent ID: [861]
+Node :[23] - Mining Success :  Block ID:[924] Parent ID: [885]
+Node :[19] - Mining Success :  Block ID:[1000] Parent ID: [924]
+Node :[39] - Mining Success :  Block ID:[1007] Parent ID: [1000]
+Node :[33] - Mining Success :  Block ID:[1080] Parent ID: [1007]
+Node :[18] - Mining Success :  Block ID:[1117] Parent ID: [1080]
+Node :[9] - Mining Success :  Block ID:[1135] Parent ID: [1117]
+Node :[9] - Mining Success :  Block ID:[1161] Parent ID: [1135]
+Node :[17] - Mining Success :  Block ID:[1225] Parent ID: [1161]
+Node :[15] - Mining Success :  Block ID:[1270] Parent ID: [1225]
+Node :[3] - Mining Success :  Block ID:[1291] Parent ID: [1270]
+Node :[13] - Mining Success :  Block ID:[1339] Parent ID: [1291]
+Node :[36] - Mining Success :  Block ID:[1392] Parent ID: [1339]
+Node :[9] - Mining Success :  Block ID:[1418] Parent ID: [1392]
+Node :[38] - Mining Success :  Block ID:[1443] Parent ID: [1418]
+Node :[6] - Mining Success :  Block ID:[1507] Parent ID: [1443]
+Node :[17] - Mining Success :  Block ID:[1545] Parent ID: [1507]
+Node :[22] - Mining Success :  Block ID:[1567] Parent ID: [1545]
+Node :[13] - Mining Success :  Block ID:[1619] Parent ID: [1567]
+Node :[35] - Mining Success :  Block ID:[1642] Parent ID: [1619]
+Node :[4] - Mining Success :  Block ID:[1698] Parent ID: [1642]
+Node :[21] - Mining Success :  Block ID:[1753] Parent ID: [1698]
+Node :[11] - Mining Success :  Block ID:[1792] Parent ID: [1753]
+Node :[6] - Mining Success :  Block ID:[1823] Parent ID: [1792]
+Node :[15] - Mining Success :  Block ID:[1868] Parent ID: [1823]
+Node :[35] - Mining Success :  Block ID:[1890] Parent ID: [1868]
+Node :[3] - Mining Success :  Block ID:[1935] Parent ID: [1890]
+Node :[23] - Mining Success :  Block ID:[1973] Parent ID: [1935]
+Node :[11] - Mining Success :  Block ID:[2021] Parent ID: [1973]
+Node :[9] - Mining Success :  Block ID:[2052] Parent ID: [2021]
+Node :[14] - Mining Success :  Block ID:[2108] Parent ID: [2052]
+Node :[26] - Mining Success :  Block ID:[2126] Parent ID: [2108]
+Node :[2] - Mining Success :  Block ID:[2170] Parent ID: [2126]
+Node :[8] - Mining Success :  Block ID:[2209] Parent ID: [2170]
+Node :[21] - Mining Success :  Block ID:[2279] Parent ID: [2209]
+Node :[20] - Mining Success :  Block ID:[2295] Parent ID: [2279]
+Node :[15] - Mining Success :  Block ID:[2323] Parent ID: [2295]
+Node :[26] - Mining Success :  Block ID:[2364] Parent ID: [2323]
+Node :[7] - Mining Success :  Block ID:[2429] Parent ID: [2364]
+Node :[2] - Mining Success :  Block ID:[2461] Parent ID: [2429]
+Node :[7] - Mining Success :  Block ID:[2508] Parent ID: [2461]
+Node :[9] - Mining Success :  Block ID:[2526] Parent ID: [2508]
+Node :[6] - Mining Success :  Block ID:[2584] Parent ID: [2526]
+Node :[10] - Mining Success :  Block ID:[2629] Parent ID: [2584]
+Node :[14] - Mining Success :  Block ID:[2645] Parent ID: [2629]
+Node :[22] - Mining Success :  Block ID:[2684] Parent ID: [2645]
+Node :[33] - Mining Success :  Block ID:[2760] Parent ID: [2684]
+Node :[14] - Mining Success :  Block ID:[2787] Parent ID: [2760]
+Node :[22] - Mining Success :  Block ID:[2804] Parent ID: [2787]
+Node :[3] - Mining Success :  Block ID:[2856] Parent ID: [2804]
+Node :[5] - Mining Success :  Block ID:[2910] Parent ID: [2856]
+Node :[35] - Mining Success :  Block ID:[2945] Parent ID: [2910]
+Node :[11] - Mining Success :  Block ID:[2981] Parent ID: [2945]
+Node :[29] - Mining Success :  Block ID:[3038] Parent ID: [2981]
+Node :[1] - Mining Success :  Block ID:[3072] Parent ID: [3038]
+Node :[31] - Mining Success :  Block ID:[3089] Parent ID: [3072]
+Node :[39] - Mining Success :  Block ID:[3130] Parent ID: [3089]
+Node :[15] - Mining Success :  Block ID:[3174] Parent ID: [3130]
+Node :[2] - Mining Success :  Block ID:[3215] Parent ID: [3174]
+Node :[19] - Mining Success :  Block ID:[3278] Parent ID: [3215]
+Node :[35] - Mining Success :  Block ID:[3309] Parent ID: [3278]
+Node :[21] - Mining Success :  Block ID:[3360] Parent ID: [3309]
+Node :[11] - Mining Success :  Block ID:[3393] Parent ID: [3360]
+Node :[27] - Mining Success :  Block ID:[3413] Parent ID: [3393]
+Node :[33] - Mining Success :  Block ID:[3480] Parent ID: [3413]
+Node :[33] - Mining Success :  Block ID:[3481] Parent ID: [3480]
+Node :[20] - Mining Success :  Block ID:[3527] Parent ID: [3481]
+Node :[27] - Mining Success :  Block ID:[3575] Parent ID: [3527]
+Node :[2] - Mining Success :  Block ID:[3611] Parent ID: [3575]
+Node :[7] - Mining Success :  Block ID:[3668] Parent ID: [3611]
+Node :[20] - Mining Success :  Block ID:[3685] Parent ID: [3668]
+Node :[9] - Mining Success :  Block ID:[3744] Parent ID: [3685]
+Node :[6] - Mining Success :  Block ID:[3784] Parent ID: [3744]
+Node :[20] - Mining Success :  Block ID:[3817] Parent ID: [3784]
+Node :[18] - Mining Success :  Block ID:[3878] Parent ID: [3817]
+Executing Remaining Events in the queue
+Node :[2] - Mining Success :  Block ID:[3903] Parent ID: [3878]
 End of Simulation
- Node :0
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :1
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :2
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :3
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                    └─ Block ID: 90
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :4
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :5
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :6
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :7
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :8
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :9
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                    └─ Block ID: 90
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :10
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :11
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :12
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :13
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 76
-                    └─ Block ID: 90
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :14
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :15
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-                └─ Block ID: 76
-                    └─ Block ID: 90
-Balance [ 0: 8, 1: 36, 2: 13, 3: 14, 4: 9, 5: 3, 6: 10, 7: 8, 8: 0, 9: 25, 10: 36, 11: 1, 12: 76, 13: 12, 14: 8, 15: 117, 16: 42, 17: 205, 18: 6, 19: 21,  ]
-
- Node :16
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :17
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :18
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
- Node :19
-└─ Block ID: 0
-    └─ Block ID: 1
-        └─ Block ID: 40
-            └─ Block ID: 52
-                └─ Block ID: 77
-                    └─ Block ID: 96
-                        └─ Block ID: 101
-                            └─ Block ID: 123
-                                └─ Block ID: 142
-                                    └─ Block ID: 175
-                                        └─ Block ID: 186
-Balance [ 0: 9, 1: 75, 2: 0, 3: 7, 4: 35, 5: 14, 6: 23, 7: 25, 8: 35, 9: 97, 10: 19, 11: 13, 12: 162, 13: 5, 14: 181, 15: 1, 16: 63, 17: 41, 18: 55, 19: 40,  ]
-
+Node ID: 0
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 1
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 2
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 3
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 4
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 5
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 6
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 7
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 8
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 9
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 10
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 11
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 12
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 13
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 14
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 15
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 16
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 17
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 18
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 19
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 20
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 21
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 22
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 23
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 24
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 25
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 26
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 27
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 28
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 29
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 30
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 31
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 32
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 33
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 34
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 35
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 36
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 37
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 38
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Node ID: 39
+Longest chain length : 98
+No of mined blocks of each node in longest chain : 0 2 7 3 2 3 4 5 1 7 1 5 0 3 3 4 0 2 2 2 5 4 4 3 0 0 2 4 0 1 0 1 0 5 0 4 3 0 2 4 
+Total No of Blocks mined by Slow Nodes :14
+Total No of Blocks mined by Fast Nodes :84
+Total No of Blocks mined by High hash power Nodes :96
+Total No of Blocks mined by Low Hash power Nodes :2
+Total No of mined blocks : 98
