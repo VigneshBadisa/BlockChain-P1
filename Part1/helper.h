@@ -40,7 +40,6 @@ struct Block{
 public :
     static int counter;
     ld timestamp;
-    ld recvdtime;
     int id, parent_id;
     std::string hash;   // curr_block_hash works as blk_id
     std::vector<Txn*> Txn_list;
@@ -65,6 +64,7 @@ public:
     std::unordered_set<int> added_txns;
     chain(Block* tail_,int depth_,int n,int amount):
         tail(tail_),depth(depth_),wallet(n,amount) {}
+    chain(Block* tail, chain* other);
     void update_tail(Block* B);
     // ~chain() = default;
 };

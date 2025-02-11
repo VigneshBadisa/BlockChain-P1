@@ -15,7 +15,6 @@ int Block::counter = 0;
 void simulator::start(){
 
     cout << "****Starting Simulation****"<<endl;
-    cout << nodes.size() <<endl;
     // Deciding Slow Nodes
     int numSlowNodes = (z0/100.0)*numNodes;
     vector<bool> slowNodes(numNodes,false);
@@ -34,7 +33,6 @@ void simulator::start(){
     }
 
     GENESIS_blk = new Block(simclock,-1, NULL);
-    GENESIS_blk->recvdtime = 0;
 
     for(int i=0;i<numNodes;i++){
         ld hash_power = low_hash_power;
@@ -44,6 +42,7 @@ void simulator::start(){
         chain* c = new chain(GENESIS_blk,0,numNodes,CAPITAL);
         nodes[i]->tail_blks.insert(c);
         nodes[i]->AllBlks[0] = GENESIS_blk;
+        nodes[i]->recvd_time[0] = 0;
     }
     // create network topology and populate latency info  
     cout << "[CHECKPOINT] : Creating Network"<<endl;
@@ -69,18 +68,19 @@ void simulator::start(){
     for(int i=0;i<numNodes;i++){
         Event* E = new Event(0,CREATE_TXN,i);
         add_event(E);
-        Event* E2 = new Event(5,MINING_START,i);
+        Event* E2 = new Event(START_MINING_TIME,MINING_START,i);
         add_event(E2);
     }
 
     cout << "[CHECKPOINT] : Executing Events in queue " <<endl;
 
-    while(!event_queue.empty()){
-        top_event = *event_queue.begin();
-        simclock = top_event->timestamp;
-        if(simclock > simEndtime) break;
-        execute_event(top_event,false);            
-        delete_event(top_event);
+    while(simclock < simEndtime){
+        if(!event_queue.empty()){
+            top_event = *event_queue.begin();
+            simclock = top_event->timestamp;
+            execute_event(top_event,false);            
+            delete_event(top_event);
+        }      
     }
 
     cout << "[CHECKPOINT] : All Events before simEndtime executed Succesfully" <<endl;
@@ -165,7 +165,13 @@ void simulator::execute_event(Event* E,bool stop_create_events){        // execu
 
     if(E->type == CREATE_TXN){
         // cout << *E <<endl;
-        nodes[E->sender_id]->create_txn(this,stop_create_events);
+        if(total_transactions > MAX_TRANSACTIONS){
+            nodes[E->sender_id]->create_txn(this,true);
+        }
+        else{
+            nodes[E->sender_id]->create_txn(this,stop_create_events);
+            if(!stop_create_events)  total_transactions += 1;
+        } 
     }else if (E->type == RECV_TXN){
         Event_TXN* txn_event = dynamic_cast<Event_TXN*>(E);
         nodes[txn_event->receiver_id]->recv_txn(txn_event->sender_id,txn_event->txn,this);
@@ -174,8 +180,14 @@ void simulator::execute_event(Event* E,bool stop_create_events){        // execu
     }else if (E->type == RECV_BLK){
         // cout << "New Event " <<endl;
         Event_BLK* blk_event = dynamic_cast<Event_BLK*>(E);
+        if(total_mined_blks > MAX_BLOCKS){
+            nodes[blk_event->receiver_id]->recv_blk(blk_event->sender_id,blk_event->blk,this,true);           
+        }
+        else{
+            nodes[blk_event->receiver_id]->recv_blk(blk_event->sender_id,blk_event->blk,this,stop_create_events);
+        } 
+
         // cout << *blk_event <<endl;
-        nodes[blk_event->receiver_id]->recv_blk(blk_event->sender_id,blk_event->blk,this,stop_create_events);
         // if(!is_executed) cout<<" Block discarded "<<endl;
         // cout << "Block chain of "<<blk_event->receiver_id << endl;
         // nodes[blk_event->receiver_id]->printBlockTree();
@@ -208,17 +220,28 @@ void simulator::write_tree_file(){
         }
     }
 
-    for(int i=0;i<numNodes;i++) total_mined_blks += nodes[i]->numMinedblks;
-
-
     for (const auto& [id, node] : nodes) {
-        ofstream file("logs/node_" + to_string(id) + ".log");
+        ofstream file("logs/Peer" + to_string(id) + ".log");
         if (!file) {
-            cerr << "Error: Could not open file for Node " << id << endl;
-            continue;
+            cerr << "Error opening Peer.txt" << endl;
+            return;
         }
         node->print_stats(this,file);
         file.close();
     }
+
+    ofstream file("blockchain.txt");
+
+    if (!file) {
+        cerr << "Error opening blockchain.txt" << endl;
+        return;
+    }
+    for (const auto& [parent, child_list] : nodes[0]->children) {
+        for (int child : child_list) {
+            file << parent << " " << child << "\n";
+        }
+    }
+
+    file.close();
 
 }

@@ -47,13 +47,13 @@ void Node:: send_txn(int peer_id, Txn* T,simulator* simul){
 
 void Node:: recv_txn(int peer_id, Txn* T, simulator* simul){
 
-    longest_chain = *tail_blks.begin();
-    if(!is_txn_valid(T,longest_chain->wallet)) return ;
+    // longest_chain = *tail_blks.begin();
+    // if(!is_txn_valid(T,longest_chain->wallet)) return ;
     if(AllTxns.find(T->id) != AllTxns.end())  return ; 
-
     // cout<<"Created Events :" <<endl;
     AllTxns[T->id] = T;
     txn_pool.insert(T);
+    // cout << "Node - [" <<id <<"] Txn added - [" << T->id << "]" <<endl;
     for(int i: adj_peers){
         if(i == peer_id) {
             // cout <<"Loop-less forwarding"<<endl;
@@ -82,6 +82,7 @@ void:: Node::create_txn(simulator* simul,bool stop_create_events){
     Txn* T = new Txn(simul->simclock,id,payee_id_,amount_);
     // Adding Txn to my pool
     AllTxns[T->id] = T;
+    // cout << "Node - [" <<id <<"] Txn added - [" << T->id << "]" <<endl;
     txn_pool.insert(T);
     for(int i : adj_peers){
         send_txn(i,T,simul);
@@ -137,10 +138,11 @@ void Node::mine_new_blk(simulator* simul){
 
 void Node::mining_success(Block* B,simulator* simul,bool stop_mining){
     longest_chain = *tail_blks.begin();
-    B->recvdtime = simul->simclock;
+    recvd_time[B->id] = simul->simclock;
     if(B->id == mining_blk->id && B->parent_id == longest_chain->tail->id){
         numMinedblks += 1;
-        cout << "Node :[" << id  << "] - ";
+        simul->total_mined_blks += 1;
+        cout <<"[" << simul->simclock << "] Node :[" << id  << "] - ";
         cout<<"Mining Success : ";
         cout<<*B<<endl;
         AllBlks[B->id] = B;
@@ -163,89 +165,24 @@ bool Node:: is_blk_valid(Block* B, chain* c){
     if(B->get_hash() != B->hash) return false;      // if block is tampered
     vector<int> temp_wallet(c->wallet);
     for(Txn* T: B->Txn_list){
-        if(c->added_txns.find(T->id) != c->added_txns.end()) return false;      // duplicate Txn
+        if(c->added_txns.find(T->id) != c->added_txns.end()) {
+            cout << "Duplicate Transaction Found" <<endl;
+            return false;      // duplicate Txn
+        }
         if(is_txn_valid(T,temp_wallet)){
             temp_wallet[T->payer_id] -= T->amount;
             temp_wallet[T->payee_id] += T->amount;
         }else{
-            // cout << "Invalid Transaction found : " <<*T<<endl;
+            cout << "Invalid Transaction found : " <<*T<<endl;
             return false;
         }
     }
     return true;
 }
 
-void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
+chain* Node:: create_new_chain(Block* B,simulator* simul){
 
-    // cout << "Node :[" << id  << "] Created Events" <<endl;
-    if(AllBlks.find(B->id) != AllBlks.end()) return;    // Block already received
-    AllBlks[B->id] = B;
-    B->recvdtime = simul->simclock;
-    longest_chain = *tail_blks.begin();
-    // cout << "Longest branch Tail [" << longest_chain->tail->id <<"]" <<endl;
-    if(B->parent_id == longest_chain->tail->id) {
-        if(!is_blk_valid(B,longest_chain)) {
-            // cout<<"Invalid Block" <<endl;
-            return;
-        }
-        for(int i:adj_peers){
-            if(peer_id == i) continue;
-            send_blk(i,B,simul);
-        }
-        tail_blks.erase(longest_chain);
-        longest_chain->update_tail(B);
-        tail_blks.insert(longest_chain);
-        for(Txn* T: B->Txn_list){
-            txn_pool.erase(T);
-        }
-        if(!stop_mining) mine_new_blk(simul);
-        // cout << "Block added to longest chain" <<endl;
-        // printBlockTree();
-        children[B->parent_id].push_back(B->id);
-        return;
-    }
-
-    // cout << "Checking branches" <<endl;
-    for(chain *c: tail_blks){
-        if(c->tail->id ==  B->parent_id){
-            if(!is_blk_valid(B,c)) {
-                // cout<<"Invalid block"<<endl;
-                return;
-            }
-            for(int i:adj_peers){
-                if(peer_id == i) continue;
-                send_blk(i,B,simul);
-            }
-            tail_blks.erase(c);
-            c->update_tail(B);
-            tail_blks.insert(c);
-            children[B->parent_id].push_back(B->id);
-            if(c->depth > longest_chain->depth){
-                // cout <<"New Longest Branch tail - "<< c->tail->id <<endl;
-                // printBlockTree();
-                for(int txn_id: longest_chain->added_txns){
-                    txn_pool.insert(AllTxns[txn_id]);
-                }
-                for(int txn_id: c->added_txns){
-                    txn_pool.erase(AllTxns[txn_id]);
-                }
-            }
-            else {
-                // cout << "Block added to branch" <<endl;
-                // printBlockTree();
-            }
-            return;
-        }
-    }
-
-    if(AllBlks.find(B->parent_id) == AllBlks.end()){
-        cout<< "Orphan Block" <<endl;
-        return;
-    }
-
-    cout <<"Creating new chain" <<endl;
-
-    Block* temp_blk = AllBlks[B->parent_id];
+    Block* temp_blk = B;
     chain* c = new chain(temp_blk,0,simul->numNodes,CAPITAL);
     while(temp_blk->id != 0){
         c->depth += 1;
@@ -261,51 +198,148 @@ void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
         }
         if(AllBlks.find(temp_blk->parent_id) == AllBlks.end()) {
             delete c;
-            cout<<"Orphan Block" <<endl;
-            return;
+            // cout<<" Orphan Block 2" <<endl;
+            return nullptr;
         }
         temp_blk = AllBlks[temp_blk->parent_id];
     }
 
-    if(!is_blk_valid(B,c)){
-        // cout << "Invalid Block" <<endl;
-        delete c;
-        return;
+    return c;
+
+}
+
+void Node:: add_orphan_blks(simulator* simul){
+
+    bool all_chains_made = false;
+
+    while(!all_chains_made){
+        all_chains_made = true;
+        for(chain* c: tail_blks){
+            if(orphanBlk_childs.find(c->tail->id) != orphanBlk_childs.end()){
+
+                tail_blks.erase(c);
+                for(int i: orphanBlk_childs[c->tail->id]){
+                    cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan Blk :["<< i << "], Parent ID :[" << c->tail->id << "] Added to chain " <<endl;
+                    if(!is_blk_valid(AllBlks[i],c)) {
+                        cout<<"[" << simul->simclock << "] Node :[" << id  << "] 3:Invalid" << *AllBlks[i] <<endl;
+                        return;
+                    }
+                    chain * new_chain = new chain(AllBlks[i],c);
+                    children[c->tail->id].push_back(i);
+                    tail_blks.insert(new_chain);
+                }
+                all_chains_made = false;
+                orphanBlk_childs[c->tail->id].clear();
+                orphanBlk_childs.erase(c->tail->id);
+                delete c;
+                break;
+            }
+        }
     }
 
+    chain* new_longest_chain = *tail_blks.begin();
+        // cout <<"New Longest Branch tail - "<< new_longest_chain->tail->id <<endl;
+    // printBlockTree();
+    for (int txn_id : longest_chain->added_txns) {
+        auto it = AllTxns.find(txn_id);
+        if (it != AllTxns.end()) {  // Only insert if txn_id exists
+            txn_pool.insert(it->second);
+        }else{
+            // cout << "Node :[" << id  << "] Transaction not found 1:[" << txn_id <<"]" <<endl;
+        }
+    }
+    
+    for (int txn_id : new_longest_chain->added_txns) {
+        auto it = AllTxns.find(txn_id);
+        if (it != AllTxns.end()) {  // Only erase if txn_id exists
+            txn_pool.erase(it->second);
+        } else{
+            // cout << "Node :[" << id  << "] Transaction not found 2:[" << txn_id <<"]" <<endl;
+        }
+    }
+
+}
+
+void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
+
+    // cout << "Node :[" << id  << "] Created Events" <<endl;
+    if(AllBlks.find(B->id) != AllBlks.end()) return;    // Block already received
+    AllBlks[B->id] = B;
     for(int i:adj_peers){
         if(peer_id == i) continue;
         send_blk(i,B,simul);
     }
+    recvd_time[B->id]= simul->simclock;
+    longest_chain = *tail_blks.begin();
+    // cout << "Longest branch Tail [" << longest_chain->tail->id <<"]" <<endl;
+    if(B->parent_id == longest_chain->tail->id) {
+        if(!is_blk_valid(B,longest_chain)) {
+            cout<<"[" << simul->simclock << "] Node :[" << id  << "] 1:Invalid" << *B <<endl;
+            return;
+        }
+        tail_blks.erase(longest_chain);
+        longest_chain->update_tail(B);
+        tail_blks.insert(longest_chain);
+        // cout << "Block added to longest chain" <<endl;
+        // printBlockTree();
+        children[B->parent_id].push_back(B->id);
+        add_orphan_blks(simul);
+        if(!stop_mining) mine_new_blk(simul);
 
-    children[B->parent_id].push_back(B->id);
+        return;
+    }
 
-    c->update_tail(B);
+    // cout << "Checking branches" <<endl;
+    for(chain *c: tail_blks){
+        if(c->tail->id ==  B->parent_id){
+            if(!is_blk_valid(B,c)) {
+                cout<< "[" << simul->simclock << "] Node :[" << id  << "] 2:Invalid" << *B <<endl;
+                return;
+            }
+            tail_blks.erase(c);
+            c->update_tail(B);
+            tail_blks.insert(c);
+            children[B->parent_id].push_back(B->id);
+            add_orphan_blks(simul);
+            return;
+        }
+    }
+
+
+    if(AllBlks.find(B->parent_id) == AllBlks.end()){
+        cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan Blk :["<< B->id << "], Parent ID:[" << B->parent_id << "] found " <<endl;
+        orphanBlks[B->id] = B;
+        orphanBlk_childs[B->parent_id].push_back(B->id);
+        return;
+    }
+
+    // cout <<"Creating new chain" <<endl;
+
+    chain* c = create_new_chain(B,simul);
+
+    if (c == nullptr){
+        cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan chain found " <<endl;
+        orphanBlks[B->id] = B;
+        orphanBlk_childs[B->parent_id].push_back(B->id);
+        return;
+    }
+
     tail_blks.insert(c);
-
-    if(c->depth > longest_chain->depth){
-        // cout <<"New Longest Branch tail - "<< c->tail->id <<endl;
-        // printBlockTree();
-        for(int txn_id: longest_chain->added_txns){
-            txn_pool.insert(AllTxns[txn_id]);
-        }
-        for(int txn_id: c->added_txns){
-            txn_pool.erase(AllTxns[txn_id]);
-        }
-    }
-    else {
-        // cout << "Block added to branch" <<endl;
-        // printBlockTree();
-    }
-
-    // cout << "Created New Chain ending at "<< c->tail->id <<endl;
+    children[B->parent_id].push_back(B->id);
+    add_orphan_blks(simul);
     return ;
 }
 
 
 // Recursive function to print the tree
 void Node::printTree(int block_id, ostream &os, int depth) {
-    os << std::string(depth * 4, ' ') << "└─ Block ID: " << block_id << ", RECVD-TIME: "<< AllBlks[block_id]->recvdtime << "\n";
+    int miner;
+    if(block_id == 0){
+        miner = -1;
+    }else{
+        miner = AllBlks[block_id]->Txn_list[0]->payee_id;
+    }
+    os << "Block ID: " << block_id << ", Parent ID: " << AllBlks[block_id]->parent_id << ", Mined by: " << miner << ", RECVD-TIME: " << recvd_time[block_id] << "\n";
     
     // Recursively print children
     if (children.find(block_id) != children.end()) {
@@ -385,5 +419,5 @@ void Node::print_stats(simulator* simul,ostream &os){
     os << "Total No of Blocks mined by High hash power Nodes :" << highHash_blks <<endl;
     os << "Total No of Blocks mined by Low Hash power Nodes :" << lowHash_blks <<endl;
 
-    printTree(0,os);
+    printTree(0,os,0);
 }

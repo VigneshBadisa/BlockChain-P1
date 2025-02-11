@@ -9,6 +9,9 @@
 
 #define MAX_BLK_SIZE 1000
 #define CAPITAL 20
+#define START_MINING_TIME 5
+#define MAX_TRANSACTIONS 120000
+#define MAX_BLOCKS 110
 
 class Node;
 
@@ -22,6 +25,7 @@ public :
     ld simclock = 0;
     ld simEndtime;
 
+    int total_transactions = 0;
     int total_mined_blks = 0;
 
     std::unordered_map<int,Node*> nodes;

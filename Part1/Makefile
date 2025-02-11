@@ -35,4 +35,5 @@ main.o: main.cc
 
 # Clean up object files and executable
 clean:
-	del  $(OBJS) $(TARGET).exe "logs\node_*.log"
+# rm  $(OBJS) $(TARGET).exe "logs/Peer*.log"
+	del  $(OBJS) $(TARGET).exe "logs\Peer*.log"

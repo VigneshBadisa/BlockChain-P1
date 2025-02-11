@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     int n = -1;  // Set to invalid values initially
-    double z0 = -1, z1 = -1, T_tx = -1, Tk = -1, simEndtime = -1;
+    ld z0 = -1, z1 = -1, T_tx = -1, Tk = -1, simEndtime = -1;
 
     static struct option long_options[] = {
         {"n", required_argument, 0, 'n'},

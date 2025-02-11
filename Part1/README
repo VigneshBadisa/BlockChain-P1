@@ -1,0 +1,30 @@
+Instructions for  running the simulator
+
+Note : make clean command was written for windows
+If you are running it on linux, use the one written in comments
+
+1. Makefile is available in the directory Part1 along with .cc and .h files for
+    simulator, helper, node and main.cc
+2. command "make" will generate an executable "sim.exe"
+3. Usage: .\sim.exe --n <nodes> --z0 <z0> --z1 <z1> --Ttx <T_tx> --Tk <Tk> --t <simEndtime>
+    where   n = no of nodes
+            z0 = percentage of slow nodes
+            z1 = percentage of low hashpower nodes
+            Ttx = average interval between two transaction created
+            Tk = average block mining time
+            t = run time of simulation
+4. Output : 
+    Runtime :
+        You will see some checkpoints and lines in the following format which are self explanatory
+        [514.394] Node :[59] - Mining Success : Block ID: [4664] Parent ID: [4617] No of Txns [103]
+    End of simualtion : 
+        sim.exe genreates DIRECTORY logs with files peer<id>.txt conatining the tree of blocks arrival info and statistics according to the peer.
+5. Checking : The output across different peers should only differ at BLOCK RECVD TIME and node specific info
+    the array printed shows the no of blocks in the longest chain mined by each peer which should be same for all files.
+
+6. There are some inbuilt conditions in code
+    simulator.h : MAX_BLK_SIZE -> max no of transactions in a block : 1000
+    simulator.h : CAPITAL -> initial amount if money alloted to each node : 20
+    simulator.h : MAX_TRANSACTIONS -> max no of transactions in the simulation
+    simulator.h : MAX_BLOCKS -> max no of blocks generated in simulation
+    you can see where they are used in the .cc file

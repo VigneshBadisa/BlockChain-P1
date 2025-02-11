@@ -38,7 +38,11 @@ public:
 
     std::unordered_map<int,Txn*> AllTxns;
     std::unordered_map<int, Block*> AllBlks;  
+    std::unordered_map<int, ld> recvd_time;  
+    std::unordered_map<int,Block*> orphanBlks;
+
     std::unordered_map<int, std::vector<int>> children;
+    std::unordered_map<int, std::vector<int>> orphanBlk_childs;
 
     std::exponential_distribution<ld> generate_Ttx, generate_tk;
     std::uniform_int_distribution<int> select_payee;
@@ -57,6 +61,8 @@ public:
     void send_blk(int peer_id, Block* B, simulator* simul);                // TBD
     void recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining);
     void mining_success(Block* B,simulator* simul,bool stop_mining);
+    chain* create_new_chain(Block* B,simulator* simul);
+    void add_orphan_blks(simulator* simul);
     void printTree(int block_id,std::ostream& os, int depth = 0);
     void print_stats(simulator* simul,std::ostream &os);
 

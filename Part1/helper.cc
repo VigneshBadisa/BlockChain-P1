@@ -104,6 +104,27 @@ void chain::update_tail(Block* B){
             wallet[T->payer_id] -= T->amount;
             wallet[T->payee_id] += T->amount;
         }
+        added_txns.insert(T->id);
+    }
+}
+
+chain:: chain(Block* B,chain* other){
+    tail = B;
+    depth = 1 + other->depth;
+    wallet = other->wallet;
+    for(int i: other->added_txns){
+        added_txns.insert(i);
+    }
+    for(Txn* T:B->Txn_list){
+        if(T->payer_id == T->payee_id){
+            wallet[T->payer_id] += T->amount;
+        }
+        else{
+            added_txns.insert(T->id);
+            wallet[T->payer_id] -= T->amount;
+            wallet[T->payee_id] += T->amount;
+        }
+        added_txns.insert(T->id);
     }
 }
 
@@ -147,7 +168,7 @@ ostream& operator <<(ostream& out, const Txn& T) {
 }
 
 ostream& operator <<(ostream& out, const Block& B) {
-    out << "Time:[" << B.timestamp << "] " << "Block ID: [" << B.id << "] Parent ID: ["<< B.parent_id << "]";
+    out << "Block ID: [" << B.id << "] Parent ID: ["<< B.parent_id << "]";
     // for(auto &txn: B.Txn_list){
     //     out << txn->id << " ";
     // }
