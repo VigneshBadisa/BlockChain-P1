@@ -16,19 +16,22 @@ void simulator::start(){
 
     cout << "****Starting Simulation****"<<endl;
     // Deciding Slow Nodes
-    int numSlowNodes = (z0/100.0)*numNodes;
+    int numSlowNodes = (z0/100)*numNodes;
+    cout<<numSlowNodes <<endl;
     vector<bool> slowNodes(numNodes,false);
     vector<bool> lowhashNodes(numNodes,false);
     srand(time(0));
     for(int i=0;i<numSlowNodes;i++){
         int node_id = rand() % numNodes;
+        while(slowNodes[node_id]) node_id = rand() % numNodes;
         slowNodes[node_id] = true;
     }
     // Computing hash power of each node
-    int numlowNodes = (z1/100.0)* numNodes;
+    int numlowNodes = (z1/100)* numNodes;
     ld low_hash_power = 1.0/(10*numNodes - 9*numlowNodes);
     for(int i=0;i<numlowNodes;i++){
         int node_id = rand() % numNodes;
+        while(lowhashNodes[node_id]) node_id = rand() % numNodes;
         lowhashNodes[node_id] = true;
     }
 

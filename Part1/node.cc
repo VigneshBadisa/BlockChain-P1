@@ -402,6 +402,7 @@ void Node::print_stats(simulator* simul,ostream &os){
         cnt_blks[AllBlks[blk_id]->Txn_list[0]->payee_id]++;
         blk_id = AllBlks[blk_id]->parent_id;
     }
+    cout <<is_slow <<"," << is_highhash << "," << cnt_blks[id] << "," << numMinedblks << endl;
     os << "Total No of mined blocks : " << simul->total_mined_blks <<endl;
     os << "Longest chain length : " << longest_chain->depth <<endl;
 
@@ -418,6 +419,5 @@ void Node::print_stats(simulator* simul,ostream &os){
     os << "Total No of Blocks mined by Fast Nodes :" << fastNode_blks <<endl;
     os << "Total No of Blocks mined by High hash power Nodes :" << highHash_blks <<endl;
     os << "Total No of Blocks mined by Low Hash power Nodes :" << lowHash_blks <<endl;
-
     printTree(0,os,0);
 }
