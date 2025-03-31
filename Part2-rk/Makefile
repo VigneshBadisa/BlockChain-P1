@@ -8,7 +8,7 @@ CXXFLAGS = -std=c++17 -Wall
 LDFLAGS = -lssl -lcrypto
 
 # Object files
-OBJS = helper.o node.o simulator.o main.o
+OBJS = helper.o node.o malnode.o simulator.o main.o
 
 # Output executable
 TARGET = sim
@@ -26,6 +26,9 @@ helper.o: helper.cc helper.h
 
 node.o: node.cc node.h
 	$(CXX) $(CXXFLAGS) -c node.cc
+
+malnode.o: malnode.cc node.h
+	$(CXX) $(CXXFLAGS) -c malnode.cc
 
 simulator.o: simulator.cc simulator.h 
 	$(CXX) $(CXXFLAGS) -c simulator.cc

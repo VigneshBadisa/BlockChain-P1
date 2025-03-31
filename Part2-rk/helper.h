@@ -35,6 +35,15 @@ struct Txncomparator{
     bool operator()(const Txn* a,const Txn*  b) const;
 };
 
+struct Block_Hash {
+public:
+    int id;
+    std::string hash;
+    Block_Hash(int id_, std::string hash_): id(id_), hash(hash_) {}
+    ~Block_Hash() = default;
+    int size();
+};
+
 struct Block{
 
 public :
@@ -65,6 +74,7 @@ public:
     chain(Block* tail_,int depth_,int n,int amount):
         tail(tail_),depth(depth_),wallet(n,amount) {}
     chain(Block* tail, chain* other);
+    chain(chain* other);
     void update_tail(Block* B);
     // ~chain() = default;
 };
@@ -78,7 +88,12 @@ typedef enum {
     CREATE_TXN,
     RECV_TXN,
     CREATE_BLK,
-    RECV_BLK
+    RECV_HASH,
+    GET_REQ,
+    RECV_BLK,
+    RECV_MAL_BLK,
+    RECV_HON_BLK,
+    BC_PRIV_CHAIN,
 } EVENT_TYPE;
 
 
@@ -110,6 +125,15 @@ public:
         :Event(timestamp_,type_,sender_id_),receiver_id(receiver_id_) ,txn(txn_) {}
 };
 
+class Event_HASH : public Event {
+
+public:
+    int receiver_id;
+    Block_Hash* bhash;
+    Event_HASH(ld timestamp_, EVENT_TYPE type_, int sender_id_, int receiver_id_, Block_Hash* bhash_)
+        :Event(timestamp_,type_,sender_id_),receiver_id(receiver_id_),bhash(bhash_) {}
+};
+
 class Event_BLK : public Event {
 
 public:
@@ -138,9 +162,11 @@ const char* eventTypeToString(EVENT_TYPE type);
 
 std::ostream& operator<<(std::ostream& os, const Txn& txn);
 std::ostream& operator<<(std::ostream& os, const Block& block);
+std::ostream& operator<<(std::ostream& os, const Block_Hash& bhash);
 std::ostream& operator<<(std::ostream& os, const Link& L);
 std::ostream& operator<<(std::ostream& os, const Event& event);
 std::ostream& operator<<(std::ostream& os, const Event_TXN& event);
 std::ostream& operator<<(std::ostream& os, const Event_BLK& event) ;
+std::ostream& operator<<(std::ostream& os, const Event_HASH& event) ;
 
 #endif

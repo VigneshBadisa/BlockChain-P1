@@ -35,7 +35,11 @@ string Txn:: get_hash(){
 
 int Txn::size(){ 
 // Size of the transaction assumed to be 1KB
-    return 1000;
+    return 1024;
+}
+
+int Block_Hash:: size(){
+    return 64;
 }
 
 Block::Block(ld timestamp_ , int parent_id_,vector<Txn*>*Txn_list_){
@@ -128,6 +132,15 @@ chain:: chain(Block* B,chain* other){
     }
 }
 
+chain:: chain(chain* other){
+    tail = other->tail;
+    depth = other->depth;
+    wallet = other->wallet;
+    for(int i: other->added_txns){
+        added_txns.insert(i);
+    }
+}
+
 bool chaincomparator::operator()(const chain* a, const chain* b) const{
     if(a->depth != b->depth){
         return a->depth > b->depth;
@@ -167,6 +180,14 @@ ostream& operator <<(ostream& out, const Txn& T) {
     return out;
 }
 
+ostream& operator <<(ostream& out, const Block_Hash& bhash) {
+    out << "Hash ID: [" << bhash.id << "]";
+    // for(auto &txn: B.Txn_list){
+    //     out << txn->id << " ";
+    // }
+    return out;
+}
+
 ostream& operator <<(ostream& out, const Block& B) {
     out << "Block ID: [" << B.id << "] Parent ID: ["<< B.parent_id << "]";
     // for(auto &txn: B.Txn_list){
@@ -189,12 +210,17 @@ const char* eventTypeToString(EVENT_TYPE type) {
         case RECV_TXN: return "RECV_TXN";
         case CREATE_BLK: return "CREATE_BLK";
         case RECV_BLK: return "RECV_BLK";
+        case RECV_HASH: return "RECV_HASH";
+        case GET_REQ: return "GET_REQ";
+        case RECV_MAL_BLK: return "RECV_MAL_BLK";
+        case BC_PRIV_CHAIN: return "BC_PRIV_CHAIN";
+        case RECV_HON_BLK: return "RECV_HON_BLK";
         default: return "UNKNOWN";
     }
 }
 
 ostream& operator<<(ostream& os, const Event& event) {
-    // os << "Time:[" << event.timestamp << "] ";
+    os << "Time:[" << event.timestamp << "] ";
     os << "Event Type:[" << eventTypeToString(event.type) << "] Sender ID:[" << event.sender_id << "]";
     return os;
 }
@@ -206,7 +232,13 @@ ostream& operator<<(ostream& os, const Event_TXN& event) {
 }
 
 ostream& operator<<(ostream& os, const Event_BLK& event) {
-    // os << "Time:[" << event.timestamp << "] ";
+    os << "Time:[" << event.timestamp << "] ";
     os << "Event Type:[" << eventTypeToString(event.type) << "] Sender ID:[" << event.sender_id << "] Receiver ID:[" << event.receiver_id << "] Block: " << *event.blk;
+    return os;
+}
+
+ostream& operator<<(ostream& os, const Event_HASH& event) {
+    os << "Time:[" << event.timestamp << "] ";
+    os << "Event Type:[" << eventTypeToString(event.type) << "] Sender ID:[" << event.sender_id << "] Receiver ID:[" << event.receiver_id << "] Hash: " << *event.bhash;
     return os;
 }

@@ -20,26 +20,32 @@ struct simulator {
 public :
 
     int numNodes;
-    float z0,z1;                                        // percentage of slow nodes, low hash nodes
-    ld T_tx, Tk;                                        // T_tx, Tk
+    float m;
+    ld Tt, T_tx, Tk;                                        // Tt, T_tx, Tk
     ld simclock = 0;
     ld simEndtime;
 
+    bool eclipse_attack;
+
     int total_transactions = 0;
     int total_mined_blks = 0;
+    int ringmaster;
 
     std::unordered_map<int,Node*> nodes;
+    std::unordered_map<int,int> malnodes;
     std::unordered_map<int,std::unordered_set<int>> adj_nodes;
+    std::unordered_map<int,std::unordered_set<int>> adj_malnodes;
     std::set<Event*,EventComparator> event_queue;
 
     Block* GENESIS_blk;
     Event* top_event;
 
-    simulator(int numNodes_, float z0_ , float z1_ ,ld simEndtime_, ld T_tx_, ld Tk_ ):
-        numNodes(numNodes_), z0(z0_), z1(z1_),T_tx(T_tx_), Tk(Tk_),simEndtime(simEndtime_) {}
+
+    simulator(int numNodes_, float m_,ld simEndtime_,ld Tt_, ld T_tx_, ld Tk_ );
 
     void start();
     void create_network();
+    void create_malicious_network();
     void add_event(Event* E);
     void delete_event(Event* E);
     void execute_event(Event* E,bool stop_create_events);

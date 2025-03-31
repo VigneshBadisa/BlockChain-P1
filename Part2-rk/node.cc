@@ -4,10 +4,11 @@
 
 using namespace std;
 
-Node:: Node(int id_, bool is_slow_ ,bool is_highhash_, ld Ttx_,ld Tk_, ld hash_power_ , Block* genesis_blk_){
+Node:: Node(int id_, bool is_slow_ ,bool is_highhash_,ld Tt_, ld Ttx_,ld Tk_, ld hash_power_ , Block* genesis_blk_){
     id = id_;
     is_slow = is_slow_;
     is_highhash = is_highhash_;
+    Tt = Tt_,
     Ttx = Ttx_;
     Tk = Tk_;
     hash_power = hash_power_;
@@ -97,7 +98,48 @@ void:: Node::create_txn(simulator* simul,bool stop_create_events){
 
 }
 
-//  Adding the coin base Txn along with Txn's from txn_pool
+//  Sending get_req only once per hash received -- TBM
+
+void Node::recv_hash(int peer_id,Block_Hash* bhash, simulator* simul){
+    if(AllHashes.find(bhash->id) != AllHashes.end()){
+        if(AllBlks.find(bhash->id) != AllBlks.end()) return;
+        int msg_len = bhash->size();
+        ld latency_ij = latency[peer_id]->get_delay(msg_len);
+        if(simul->simclock - Hashtimeout[id] > Tt){            
+            Event_HASH* E = new Event_HASH(latency_ij,GET_REQ,id,peer_id,bhash);
+            Hashtimeout[id] = simul->simclock;
+            simul->add_event(E);
+        }else{
+            ld delay = Hashtimeout[id] + Tt - simul->simclock + latency_ij;
+            Event_HASH* E = new Event_HASH(delay,GET_REQ,id,peer_id,bhash);
+            Hashtimeout[id] = simul->simclock;
+            simul->add_event(E);    
+        }
+    }else{
+        if(AllBlks.find(bhash->id) != AllBlks.end()){
+            AllHashes[bhash->id] = bhash;
+            return;
+        }
+        AllHashes[bhash->id] = bhash;
+        int msg_len = bhash->size();
+        ld latency_ij = latency[peer_id]->get_delay(msg_len);
+        Event_HASH* E = new Event_HASH(latency_ij,GET_REQ,id,peer_id,bhash);
+        Hashtimeout[bhash->id] = simul->simclock;
+        simul->add_event(E);
+    }
+}
+
+void Node::send_hash(int peer_id,Block_Hash* bhash, simulator* simul){
+    int msg_len = bhash->size();
+    ld latency_ij = latency[peer_id]->get_delay(msg_len);
+    Event_HASH* E = new Event_HASH(latency_ij,RECV_HASH,id,peer_id,bhash);
+    simul->add_event(E);
+}
+
+void Node::recv_get_req(int peer_id,Block_Hash* bhash, simulator* simul){
+    Block* B = AllBlks[bhash->id];
+    send_blk(peer_id,B,simul);
+}
 
 Block* Node:: create_blk(simulator* simul){
 
@@ -132,7 +174,9 @@ void Node:: send_blk(int peer_id, Block* B, simulator* simul){
 
 void Node::mine_new_blk(simulator* simul){
     mining_blk = create_blk(simul);
-    Event_BLK* E = new Event_BLK(generate_tk(rng),CREATE_BLK,id,id,mining_blk);
+    ld delay = generate_tk(rng);
+    // cout << "Node [" << id << "] : GEN BLK - delay - "<<delay <<endl;
+    Event_BLK* E = new Event_BLK(delay,CREATE_BLK,id,id,mining_blk);
     simul->add_event(E);
 }
 
@@ -146,7 +190,10 @@ void Node::mining_success(Block* B,simulator* simul,bool stop_mining){
         cout<<"Mining Success : ";
         cout<<*B<<endl;
         AllBlks[B->id] = B;
-        for(int i:adj_peers) send_blk(i,B,simul);
+        // for(int i:adj_peers) send_blk(i,B,simul);
+        Block_Hash* bhash = new Block_Hash(B->id,B->hash);
+        AllHashes[B->id] = bhash;
+        for(int i:adj_peers) send_hash(i,bhash,simul);
         tail_blks.erase(longest_chain);
         longest_chain->update_tail(B);
         tail_blks.insert(longest_chain);
@@ -219,7 +266,7 @@ void Node:: add_orphan_blks(simulator* simul){
 
                 tail_blks.erase(c);
                 for(int i: orphanBlk_childs[c->tail->id]){
-                    cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan Blk :["<< i << "], Parent ID :[" << c->tail->id << "] Added to chain " <<endl;
+                    // cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan Blk :["<< i << "], Parent ID :[" << c->tail->id << "] Added to chain " <<endl;
                     if(!is_blk_valid(AllBlks[i],c)) {
                         cout<<"[" << simul->simclock << "] Node :[" << id  << "] 3:Invalid" << *AllBlks[i] <<endl;
                         return;
@@ -265,9 +312,13 @@ void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
     // cout << "Node :[" << id  << "] Created Events" <<endl;
     if(AllBlks.find(B->id) != AllBlks.end()) return;    // Block already received
     AllBlks[B->id] = B;
+    if(AllHashes.find(B->id) == AllHashes.end()){
+        Block_Hash* bhash = new Block_Hash(B->id,B->hash);
+        AllHashes[B->id] = bhash;
+    }
     for(int i:adj_peers){
         if(peer_id == i) continue;
-        send_blk(i,B,simul);
+        send_hash(i,AllHashes[B->id],simul);
     }
     recvd_time[B->id]= simul->simclock;
     longest_chain = *tail_blks.begin();
@@ -307,7 +358,7 @@ void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
 
 
     if(AllBlks.find(B->parent_id) == AllBlks.end()){
-        cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan Blk :["<< B->id << "], Parent ID:[" << B->parent_id << "] found " <<endl;
+        // cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan Blk :["<< B->id << "], Parent ID:[" << B->parent_id << "] found " <<endl;
         orphanBlks[B->id] = B;
         orphanBlk_childs[B->parent_id].push_back(B->id);
         return;
@@ -318,7 +369,7 @@ void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
     chain* c = create_new_chain(B,simul);
 
     if (c == nullptr){
-        cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan chain found " <<endl;
+        // cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan chain found " <<endl;
         orphanBlks[B->id] = B;
         orphanBlk_childs[B->parent_id].push_back(B->id);
         return;
@@ -378,46 +429,24 @@ Node::~Node(){
     delete mining_blk;
 }
 
-void Node::print_stats(simulator* simul,ostream &os){
-
-    int lowHash_blks = 0;
-    int highHash_blks = 0;
-    int slowNode_blks = 0;
-    int fastNode_blks = 0;
+void Node::print_stats(simulator* simul,ostream &os, int ringmaster,int total_malblks){
 
     os << "Node ID: " << id << "\n";
-    os << "Is Slow: " << (is_slow ? "Yes" : "No") << "\n";
-    os << "Is High hash power: " << (is_highhash ? "Yes" : "No") << "\n";
-    os << "Mean Interval Time for Transactions (Ttx): " << Ttx << "\n";
-    os << "Average Time for Mining (Tk): " << Tk << "\n";
     os << "Number of Mined Blocks: " << numMinedblks << "\n";
     os << "Hash Power: " << hash_power << "\n";
 
-    vector<int> cnt_blks = vector<int>(simul->numNodes,0);
     
     longest_chain = *tail_blks.begin();
-    int blk_id = longest_chain->tail->id;
-
-    while(blk_id != 0){
-        cnt_blks[AllBlks[blk_id]->Txn_list[0]->payee_id]++;
-        blk_id = AllBlks[blk_id]->parent_id;
-    }
-    cout <<is_slow <<"," << is_highhash << "," << cnt_blks[id] << "," << numMinedblks << endl;
-    os << "Total No of mined blocks : " << simul->total_mined_blks <<endl;
     os << "Longest chain length : " << longest_chain->depth <<endl;
 
-    os << "No of mined blocks of each node in longest chain : ";
-    for(int i =0 ; i < simul->numNodes ; i++){
-        if(simul->nodes[i]->is_slow) slowNode_blks += cnt_blks[i];
-        else fastNode_blks += cnt_blks[i];
-        if(simul->nodes[i]->is_highhash) highHash_blks += cnt_blks[i];
-        else lowHash_blks += cnt_blks[i];
-        os << cnt_blks[i] << " ";
+    int blk_id = longest_chain->tail->id;
+    int numMalBlks = 0;
+    while(blk_id != 0){
+        int miner = AllBlks[blk_id]->Txn_list[0]->payee_id;
+        if(miner == ringmaster) numMalBlks++;
+        blk_id = AllBlks[blk_id]->parent_id;
     }
-    os <<endl;
-    os << "Total No of Blocks mined by Slow Nodes :" << slowNode_blks <<endl;
-    os << "Total No of Blocks mined by Fast Nodes :" << fastNode_blks <<endl;
-    os << "Total No of Blocks mined by High hash power Nodes :" << highHash_blks <<endl;
-    os << "Total No of Blocks mined by Low Hash power Nodes :" << lowHash_blks <<endl;
+    os << "Ratio of No of Malicious blks to Total Blks in Longest chain - "<< float(numMalBlks)/longest_chain->depth <<endl;
+    os << "Ratio of No of Malicious blks in Longest chain to total Mal blks - "<< float(numMalBlks)/total_malblks <<endl;
     printTree(0,os,0);
 }
