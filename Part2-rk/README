@@ -6,23 +6,24 @@ libraries pls install them and run again. Recommended to run on windows.
 1. Makefile is available in the directory Part1 along with .cc and .h files for
     simulator, helper, node and main.cc
 2. command "make" will generate an executable "sim.exe"
-3. Usage: .\sim.exe --n <nodes> --z0 <z0> --z1 <z1> --Ttx <T_tx> --Tk <Tk> --t <simEndtime>
+3. Usage: .\sim.exe --n <nodes> --m <m> --Ttx <T_tx> --Tk <Tk> --t <simEndtime> --e <disable_eclipse>
     where   n = no of nodes
-            z0 = percentage of slow nodes
-            z1 = percentage of low hashpower nodes
+            m = percentage of malicious nodes
             Ttx = average interval between two transaction created
             Tk = average block mining time
             t = run time of simulation
+            e = if set to 0 disables the Eclipse attack
 4. Output : 
     Runtime :
         You will see some checkpoints and lines in the following format which are self explanatory
-        [514.394] Node :[59] - Mining Success : Block ID: [4664] Parent ID: [4617] No of Txns [103]
+    Eg: [514.394] Node :[59] - Mining Success : Block ID: [4664] Parent ID: [4617] No of Txns [103]
+        [14864.7] MalNode :[0]  Hdepth :[0] Pdepth: [3]
     End of simualtion : 
         sim.exe genreates DIRECTORY logs with files peer<id>.txt conatining the tree of blocks arrival info and statistics according to the peer.
-        At the end you will get rows for each peer in the format is_slow,is_highhash,n1,n2 where n1/n2 gives r value of the node.
-        
-5. Checking : The output across different peers should only differ at BLOCK RECVD TIME and node specific info
-    the array printed shows the no of blocks in the longest chain mined by each peer which should be same for all files.
+
+5. Visualization :
+    sim.exe also generates blockchain.txt which contains two random Honest nodes, Ringmaster and a random malicious node.
+    run python .\visualize.py which uses the blockchain.txt and respective Peer<id>.log files to generate block chain as viwed by them.
 
 6. There are some inbuilt conditions in code
     simulator.h : MAX_BLK_SIZE -> max no of transactions in a block : 1000

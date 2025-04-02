@@ -60,7 +60,7 @@ public:
     void mine_new_blk(simulator* simul);
     void send_txn(int peer_id,Txn* T, simulator* simul);                // TBD
     void recv_txn(int peer_id,Txn* T, simulator* simul);       
-    virtual void recv_hash(int peer_id,Block_Hash* bhash, simulator* simul);
+    void recv_hash(int peer_id,Block_Hash* bhash, simulator* simul);
     void send_hash(int peer_id,Block_Hash* bhash, simulator* simul);
     virtual void recv_get_req(int peer_id,Block_Hash* bhash, simulator* simul);        
     bool is_blk_valid(Block * B,chain* c);            // TBD
@@ -69,7 +69,7 @@ public:
     virtual void recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining);
     virtual void mining_success(Block* B,simulator* simul,bool stop_mining);
     chain* create_new_chain(Block* B,simulator* simul);
-    void add_orphan_blks(simulator* simul);
+    virtual void add_orphan_blks(simulator* simul);
     void printTree(int block_id,std::ostream& os, int depth = 0);
     void print_stats(simulator* simul,std::ostream &os,int ringmaster,int total_malblks);
     virtual void recv_mal_blk(int peer_id, Block* B, simulator* simul,bool stop_mining) {};
@@ -83,15 +83,15 @@ public :
     Block* branch_blk;
     chain* private_chain; 
     bool eclipse_attack; 
-    bool is_attacking;  
     bool is_ringmaster;
     std::vector<int> adj_malpeers;
     std::unordered_map<int,Link*> mallatency;          // Latency info 
 
     MalNode(int id_, bool is_slow_ ,bool is_highhash_,bool eclipse_attack_, bool is_ringmaster_,ld Tt_, ld Ttx_,ld Tk_, ld hash_power_ , Block* genesis_blk_);
     void recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining) override;
+    void add_orphan_blks(simulator* simul) override;
     Block* create_blk(simulator* simul) override;
-    void recv_hash(int peer_id,Block_Hash* bhash, simulator* simul);
+    // void recv_hash(int peer_id,Block_Hash* bhash, simulator* simul);
     void recv_get_req(int peer_id,Block_Hash* bhash, simulator* simul) override;
     void mining_success(Block* B,simulator* simul,bool stop_mining) override;
     void send_private_blk(int peer_id, Block* B, simulator* simul);

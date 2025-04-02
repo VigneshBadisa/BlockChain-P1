@@ -105,14 +105,16 @@ void Node::recv_hash(int peer_id,Block_Hash* bhash, simulator* simul){
         if(AllBlks.find(bhash->id) != AllBlks.end()) return;
         int msg_len = bhash->size();
         ld latency_ij = latency[peer_id]->get_delay(msg_len);
-        if(simul->simclock - Hashtimeout[id] > Tt){            
+        if(simul->simclock - Hashtimeout[bhash->id] > Tt){            
             Event_HASH* E = new Event_HASH(latency_ij,GET_REQ,id,peer_id,bhash);
-            Hashtimeout[id] = simul->simclock;
+            // cout <<"[" << simul->simclock << "] Node :[" << id  << "] Hash : [" << bhash->id << "] - Timeout expired :"  <<endl;
+            Hashtimeout[bhash->id] = simul->simclock;
             simul->add_event(E);
         }else{
-            ld delay = Hashtimeout[id] + Tt - simul->simclock + latency_ij;
+            ld delay = Hashtimeout[bhash->id] + Tt - simul->simclock + latency_ij;
+            // cout <<"[" << simul->simclock << "] Node :[" << id  << "] Hash : [" << bhash->id << "] - Timeout still running" <<endl;
             Event_HASH* E = new Event_HASH(delay,GET_REQ,id,peer_id,bhash);
-            Hashtimeout[id] = simul->simclock;
+            Hashtimeout[bhash->id] = simul->simclock;
             simul->add_event(E);    
         }
     }else{
@@ -120,6 +122,7 @@ void Node::recv_hash(int peer_id,Block_Hash* bhash, simulator* simul){
             AllHashes[bhash->id] = bhash;
             return;
         }
+        // cout <<"[" << simul->simclock << "] Node :[" << id  << "] Hash : [" << bhash->id << "] - Initializing timeout :" <<endl;
         AllHashes[bhash->id] = bhash;
         int msg_len = bhash->size();
         ld latency_ij = latency[peer_id]->get_delay(msg_len);
@@ -278,7 +281,6 @@ void Node:: add_orphan_blks(simulator* simul){
                 all_chains_made = false;
                 orphanBlk_childs[c->tail->id].clear();
                 orphanBlk_childs.erase(c->tail->id);
-                delete c;
                 break;
             }
         }
@@ -335,23 +337,37 @@ void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
         // printBlockTree();
         children[B->parent_id].push_back(B->id);
         add_orphan_blks(simul);
-        if(!stop_mining) mine_new_blk(simul);
+        if(!stop_mining) {
+            mine_new_blk(simul);
+        }
 
         return;
     }
 
     // cout << "Checking branches" <<endl;
     for(chain *c: tail_blks){
+        if(c == NULL || c == nullptr) {cout <<"c is NULL"<<endl;}
+        if(c->tail == NULL || c->tail == nullptr) {cout <<"tail blk is NULL"<<endl;}
+        // cout << c->tail->id <<endl;
         if(c->tail->id ==  B->parent_id){
+            // cout << "Check 1" <<endl;
             if(!is_blk_valid(B,c)) {
                 cout<< "[" << simul->simclock << "] Node :[" << id  << "] 2:Invalid" << *B <<endl;
                 return;
             }
-            tail_blks.erase(c);
+            // cout << "Check 2" <<endl;
             c->update_tail(B);
-            tail_blks.insert(c);
+            longest_chain = *tail_blks.begin();
+            // cout << "Check 3" <<endl;
+            if(c->depth != longest_chain->depth) {
+                // cout << "Check 4" <<endl;
+                tail_blks.erase(c);
+                tail_blks.insert(c);
+            }
+            // cout << "Check 5" <<endl;
             children[B->parent_id].push_back(B->id);
             add_orphan_blks(simul);
+            // cout << "Check 6" <<endl;
             return;
         }
     }
@@ -366,7 +382,7 @@ void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
 
     // cout <<"Creating new chain" <<endl;
 
-    chain* c = create_new_chain(B,simul);
+    chain* c = create_new_chain(AllBlks[B->parent_id],simul);
 
     if (c == nullptr){
         // cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan chain found " <<endl;
@@ -376,6 +392,11 @@ void Node:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
     }
 
     tail_blks.insert(c);
+    c->update_tail(B);
+    if(c->depth != longest_chain->depth) {
+        tail_blks.erase(c);
+        tail_blks.insert(c);
+    }
     children[B->parent_id].push_back(B->id);
     add_orphan_blks(simul);
     return ;

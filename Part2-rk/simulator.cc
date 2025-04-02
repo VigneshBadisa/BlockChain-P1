@@ -13,14 +13,14 @@ mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 int Txn::counter = 0;
 int Block::counter = 0;
 
-simulator:: simulator(int numNodes_, float m_,ld simEndtime_,ld Tt_, ld T_tx_, ld Tk_ ){
+simulator:: simulator(int numNodes_, float m_,ld simEndtime_,ld Tt_, ld T_tx_, ld Tk_ ,bool eclipse_attack_){
     numNodes = numNodes_;
     m = m_;
     Tt = Tt_;
     T_tx = T_tx_;
     Tk = Tk_;
     simEndtime = simEndtime_;
-    eclipse_attack = true;
+    eclipse_attack = eclipse_attack_;
 }
 
 void simulator::start(){
@@ -130,7 +130,7 @@ void simulator::start(){
         if(!event_queue.empty()){
             top_event = *event_queue.begin();
             simclock = top_event->timestamp;
-            // if(top_event->type == CREATE_BLK || top_event->type == RECV_BLK || top_event->type == MINING_START ) cout << "Time : " <<simclock <<endl;
+            // if(top_event->type == CREATE_BLK || top_event->type == RECV_BLK || top_event->type == MINING_START ) cout << *top_event <<endl;
             execute_event(top_event,false);            
             delete_event(top_event);
         }      
@@ -263,8 +263,8 @@ void simulator::create_malicious_network(){
 
 void simulator::add_event(Event * E){
     E->timestamp += simclock;
-    // if((E->type == RECV_BLK || E->type == CREATE_BLK)) cout << *(dynamic_cast<Event_BLK*>(E)) <<endl;
-    // if((E->type == RECV_HON_BLK)) cout << *(dynamic_cast<Event_BLK*>(E)) <<endl;
+    // if((E->type == RECV_BLK)) cout << *(dynamic_cast<Event_BLK*>(E)) <<endl;
+    // if((E->type == RECV_MAL_BLK)) cout << *(dynamic_cast<Event_BLK*>(E)) <<endl;
     // if((E->type == GET_REQ|| E->type == RECV_HASH)) cout << *(dynamic_cast<Event_HASH*>(E)) <<endl;
     // if(E->type == BC_PRIV_CHAIN) cout <<*E <<endl;
     event_queue.insert(E);

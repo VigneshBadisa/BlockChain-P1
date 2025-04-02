@@ -11,8 +11,6 @@ MalNode::MalNode(int id_, bool is_slow_ ,bool is_highhash_,bool eclipse_attack_,
     is_highhash = is_highhash_;
     is_ringmaster = is_ringmaster_;
     eclipse_attack = eclipse_attack_;
-    if(eclipse_attack)is_attacking = true;
-    else is_attacking = false;
     Tt = Tt_,
     Ttx = Ttx_;
     Tk = Tk_;
@@ -91,6 +89,23 @@ void MalNode::selfish_mining(bool stop_mining, simulator* simul){
             if(new_hchain_depth > new_pchain_depth ){
                 assert(new_pchain_depth == 0);
                 if(!stop_mining)cout <<"[" << simul->simclock << "] MalNode :[" << id  << "] Mining on New Longest honest chain " <<endl;
+                for (int txn_id : private_chain->added_txns) {
+                    auto it = AllTxns.find(txn_id);
+                    if (it != AllTxns.end()) {  // Only insert if txn_id exists
+                        txn_pool.insert(it->second);
+                    }else{
+                        // cout << "Node :[" << id  << "] Transaction not found 1:[" << txn_id <<"]" <<endl;
+                    }
+                }
+                
+                for (int txn_id : longest_chain->added_txns) {
+                    auto it = AllTxns.find(txn_id);
+                    if (it != AllTxns.end()) {  // Only erase if txn_id exists
+                        txn_pool.erase(it->second);
+                    } else{
+                        // cout << "Node :[" << id  << "] Transaction not found 2:[" << txn_id <<"]" <<endl;
+                    }
+                }
                 private_chain = new chain(longest_chain);
                 branch_blk = private_chain->tail;
                 if(!stop_mining) mine_new_blk(simul);
@@ -107,40 +122,11 @@ void MalNode::selfish_mining(bool stop_mining, simulator* simul){
 }
 
 void MalNode:: recv_get_req(int peer_id,Block_Hash* bhash, simulator* simul){
-    if(!is_attacking){
+    if(!eclipse_attack){
         Block* B = AllBlks[bhash->id];
         send_blk(peer_id,B,simul);
-    }
-}
-
-void MalNode::recv_hash(int peer_id,Block_Hash* bhash, simulator* simul){
-    if(AllHashes.find(bhash->id) != AllHashes.end()){
-        if(AllBlks.find(bhash->id) != AllBlks.end()) return;
-        int msg_len = bhash->size();
-        ld latency_ij = latency[peer_id]->get_delay(msg_len);
-        if(simul->simclock - Hashtimeout[id] > Tt){            
-            Event_HASH* E = new Event_HASH(latency_ij,GET_REQ,id,peer_id,bhash);
-            Hashtimeout[id] = simul->simclock;
-            simul->add_event(E);
-        }else{
-            ld delay = Hashtimeout[id] + Tt - simul->simclock + latency_ij;
-            Event_HASH* E = new Event_HASH(delay,GET_REQ,id,peer_id,bhash);
-            Hashtimeout[id] = simul->simclock;
-            simul->add_event(E);    
-        }
     }else{
-        if(AllBlks.find(bhash->id) != AllBlks.end()){
-            // cout << "Block without Hash" << endl;
-            AllHashes[bhash->id] = bhash;
-            return;
-        }
-        if(eclipse_attack) is_attacking = true;
-        AllHashes[bhash->id] = bhash;
-        int msg_len = bhash->size();
-        ld latency_ij = latency[peer_id]->get_delay(msg_len);
-        Event_HASH* E = new Event_HASH(latency_ij,GET_REQ,id,peer_id,bhash);
-        Hashtimeout[bhash->id] = simul->simclock;
-        simul->add_event(E);
+        // cout << "Eclipse Attack Enabled" <<endl;
     }
 }
 
@@ -160,7 +146,7 @@ void MalNode :: recv_hon_blk(int peer_id, Block* B, simulator* simul,bool stop_m
     // cout << "Longest branch Tail [" << longest_chain->tail->id <<"]" <<endl;
     if(B->parent_id == longest_chain->tail->id) {
         if(!is_blk_valid(B,longest_chain)) {
-            cout<<"[" << simul->simclock << "] Node :[" << id  << "] 1:Invalid" << *B <<endl;
+            cout<<"[" << simul->simclock << "] MalNode :[" << id  << "] 1:Invalid" << *B <<endl;
             return;
         }
         tail_blks.erase(longest_chain);
@@ -178,7 +164,7 @@ void MalNode :: recv_hon_blk(int peer_id, Block* B, simulator* simul,bool stop_m
     for(chain *c: tail_blks){
         if(c->tail->id ==  B->parent_id){
             if(!is_blk_valid(B,c)) {
-                cout<< "[" << simul->simclock << "] Node :[" << id  << "] 2:Invalid" << *B <<endl;
+                cout<< "[" << simul->simclock << "] MalNode :[" << id  << "] 2:Invalid" << *B <<endl;
                 return;
             }
             tail_blks.erase(c);
@@ -193,7 +179,7 @@ void MalNode :: recv_hon_blk(int peer_id, Block* B, simulator* simul,bool stop_m
 
 
     if(AllBlks.find(B->parent_id) == AllBlks.end()){
-        cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan Blk :["<< B->id << "], Parent ID:[" << B->parent_id << "] found " <<endl;
+        cout << "[" << simul->simclock << "] MalNode :[" << id  << "] Orphan Blk :["<< B->id << "], Parent ID:[" << B->parent_id << "] found " <<endl;
         orphanBlks[B->id] = B;
         orphanBlk_childs[B->parent_id].push_back(B->id);
         return;
@@ -204,7 +190,7 @@ void MalNode :: recv_hon_blk(int peer_id, Block* B, simulator* simul,bool stop_m
     chain* c = create_new_chain(B,simul);
 
     if (c == nullptr){
-        cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan chain found " <<endl;
+        cout << "[" << simul->simclock << "] MalNode :[" << id  << "] Orphan chain found " <<endl;
         orphanBlks[B->id] = B;
         orphanBlk_childs[B->parent_id].push_back(B->id);
         return;
@@ -214,6 +200,36 @@ void MalNode :: recv_hon_blk(int peer_id, Block* B, simulator* simul,bool stop_m
     children[B->parent_id].push_back(B->id);
     add_orphan_blks(simul);
     selfish_mining(stop_mining,simul);   
+}
+
+void MalNode:: add_orphan_blks(simulator* simul){
+
+    bool all_chains_made = false;
+
+    while(!all_chains_made){
+        all_chains_made = true;
+        for(chain* c: tail_blks){
+            if(orphanBlk_childs.find(c->tail->id) != orphanBlk_childs.end()){
+
+                tail_blks.erase(c);
+                for(int i: orphanBlk_childs[c->tail->id]){
+                    // cout << "[" << simul->simclock << "] MalNode :[" << id  << "] Orphan Blk :["<< i << "], Parent ID :[" << c->tail->id << "] Added to chain " <<endl;
+                    if(!is_blk_valid(AllBlks[i],c)) {
+                        cout<<"[" << simul->simclock << "] MalNode :[" << id  << "] 3:Invalid" << *AllBlks[i] <<endl;
+                        return;
+                    }
+                    chain * new_chain = new chain(AllBlks[i],c);
+                    children[c->tail->id].push_back(i);
+                    tail_blks.insert(new_chain);
+                }
+                all_chains_made = false;
+                orphanBlk_childs[c->tail->id].clear();
+                orphanBlk_childs.erase(c->tail->id);
+                delete c;
+                break;
+            }
+        }
+    }
 }
 
 void MalNode:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining){
@@ -237,7 +253,7 @@ void MalNode:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining
     // cout << "Longest branch Tail [" << longest_chain->tail->id <<"]" <<endl;
     if(B->parent_id == longest_chain->tail->id) {
         if(!is_blk_valid(B,longest_chain)) {
-            cout<<"[" << simul->simclock << "] Node :[" << id  << "] 1:Invalid" << *B <<endl;
+            cout<<"[" << simul->simclock << "] MalNode :[" << id  << "] 1:Invalid" << *B <<endl;
             return;
         }
         tail_blks.erase(longest_chain);
@@ -255,7 +271,7 @@ void MalNode:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining
     for(chain *c: tail_blks){
         if(c->tail->id ==  B->parent_id){
             if(!is_blk_valid(B,c)) {
-                cout<< "[" << simul->simclock << "] Node :[" << id  << "] 2:Invalid" << *B <<endl;
+                cout<< "[" << simul->simclock << "] MalNode :[" << id  << "] 2:Invalid" << *B <<endl;
                 return;
             }
             tail_blks.erase(c);
@@ -270,7 +286,7 @@ void MalNode:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining
 
 
     if(AllBlks.find(B->parent_id) == AllBlks.end()){
-        cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan Blk :["<< B->id << "], Parent ID:[" << B->parent_id << "] found " <<endl;
+        cout << "[" << simul->simclock << "] MalNode :[" << id  << "] Orphan Blk :["<< B->id << "], Parent ID:[" << B->parent_id << "] found " <<endl;
         orphanBlks[B->id] = B;
         orphanBlk_childs[B->parent_id].push_back(B->id);
         return;
@@ -281,7 +297,7 @@ void MalNode:: recv_blk(int peer_id, Block* B, simulator* simul,bool stop_mining
     chain* c = create_new_chain(B,simul);
 
     if (c == nullptr){
-        cout << "[" << simul->simclock << "] Node :[" << id  << "] Orphan chain found " <<endl;
+        cout << "[" << simul->simclock << "] MalNode :[" << id  << "] Orphan chain found " <<endl;
         orphanBlks[B->id] = B;
         orphanBlk_childs[B->parent_id].push_back(B->id);
         return;
@@ -302,7 +318,6 @@ void MalNode:: broadcast_private_chain(simulator* simul){
         cout <<"[" << simul->simclock << "] MalNode :[" << id  << "] - ";
         cout <<"Broadcasting private chain from : [" << branch_blk->id << "] to Block [" << private_chain->tail->id <<"]" <<endl;    
     }
-    if(eclipse_attack) is_attacking = false;
     // cout << "check 1" <<endl;
     for(int peer_id: adj_malpeers){
         int msg_len = 64;
@@ -312,13 +327,13 @@ void MalNode:: broadcast_private_chain(simulator* simul){
     }
     // cout << "check 2" <<endl;
     Block* B = private_chain->tail;
-    while(B->id != branch_blk->id){
+    while(B->id != 0){
         // cout << "Sending hash to Honest network - Hash :" << B->id  <<endl;
         Block_Hash* bhash = new Block_Hash(B->id,B->hash);
         AllHashes[B->id] = bhash;
         for(int i:adj_peers){
-            send_hash(i,bhash,simul);
-            // send_blk(i,B,simul);
+            // send_hash(i,bhash,simul);
+            send_blk(i,B,simul);
         }
         B = AllBlks[B->parent_id];
     }
@@ -342,7 +357,7 @@ void  MalNode:: recv_mal_blk(int peer_id, Block* B, simulator* simul,bool stop_m
 
     if(B->parent_id == private_chain->tail->id) {
         if(!is_blk_valid(B,private_chain)) {
-            cout<<"[" << simul->simclock << "] Node :[" << id  << "] 1:Invalid" << *B <<endl;
+            cout<<"[" << simul->simclock << "] MalNode :[" << id  << "] 1:Invalid" << *B <<endl;
             return;
         }
         private_chain->update_tail(B);

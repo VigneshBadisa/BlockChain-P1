@@ -41,7 +41,7 @@ public :
     Event* top_event;
 
 
-    simulator(int numNodes_, float m_,ld simEndtime_,ld Tt_, ld T_tx_, ld Tk_ );
+    simulator(int numNodes_, float m_,ld simEndtime_,ld Tt_, ld T_tx_, ld Tk_ , bool eclipse_attack);
 
     void start();
     void create_network();

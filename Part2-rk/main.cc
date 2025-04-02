@@ -7,7 +7,7 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    int n = -1;  // Set to invalid values initially
+    int n = -1, e = -1;  // Set to invalid values initially
     ld  m = -1,Tt = -1, T_tx = -1, Tk = -1, simEndtime = -1;
 
     static struct option long_options[] = {
@@ -17,12 +17,13 @@ int main(int argc, char* argv[]) {
         {"Ttx", required_argument, 0, 'T'},
         {"Tk", required_argument, 0, 'K'},
         {"t", required_argument, 0, 's'},
+        {"e", required_argument, 0, 'e'},
         {0, 0, 0, 0}
     };
 
     int opt;
 
-    while ((opt = getopt_long(argc, argv, "n:z:Z:T:K:s:", long_options, nullptr)) != -1) {
+    while ((opt = getopt_long(argc, argv, "n:m:t:T:K:s:e:", long_options, nullptr)) != -1) {
         switch (opt) {
             case 'n': n = stoi(optarg); break;
             case 'm': m = stod(optarg); break;
@@ -30,19 +31,25 @@ int main(int argc, char* argv[]) {
             case 'T': T_tx = stod(optarg); break;
             case 'K': Tk = stod(optarg); break;
             case 's': simEndtime = stod(optarg); break;
+            case 'e': e = stoi(optarg); break;
             default:
-                cerr << "Usage: " << argv[0] << " --n <nodes> --m <m> --Tt <Tt> --Ttx <T_tx> --Tk <Tk> --t <simEndtime>\n";
+                cerr << "Usage: " << argv[0] << " --n <nodes> --m <m> --Tt <Tt> --Ttx <T_tx> --Tk <Tk> --t <simEndtime> --e <eclipse(0 or 1)>\n";
                 return 1;
         }
     }
 
     if (n == -1||m == -1 || T_tx == -1 || Tk == -1 || simEndtime == -1) {
         cerr << "Error: Missing required arguments!\n";
-        cerr << "Usage: " << argv[0] << " --n <nodes> --m <m> --Tt <Tt> --Ttx <T_tx> --Tk <Tk> --t <simEndtime>\n";
+        cerr << "Usage: " << argv[0] << " --n <nodes> --m <m> --Tt <Tt> --Ttx <T_tx> --Tk <Tk> --t <simEndtime> --e <eclipse(0 or 1)\n";
         return 1;
     }
 
-    simulator sim(n,m,simEndtime,Tt,T_tx,Tk);
+    bool eclipse_attack;
+    if(e == 0) eclipse_attack = false;
+    else eclipse_attack = true;
+
+
+    simulator sim(n,m,simEndtime,Tt,T_tx,Tk,eclipse_attack);
     sim.start();
     sim.write_tree_file();
     // deleting all the pointers
